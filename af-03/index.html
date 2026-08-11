@@ -1,1 +1,188 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AF-03 | AquaCheck Descarte y Sectorización</title>
+<style>
+:root{--navy:#0b2239;--blue:#087ea4;--cyan:#19a9c7;--light:#eef6f8;--line:#d7e5ea;--text:#17212b;--muted:#65737d;--warn:#fff4df;--orange:#d88921;--red:#b94242;--green:#24765a}
+*{box-sizing:border-box}body{margin:0;background:#f4f7f8;color:var(--text);font-family:Arial,Helvetica,sans-serif}.wrap{max-width:1040px;margin:auto;padding:22px}
+.toolbar{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--line);padding:10px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+button,.filebtn{border:0;border-radius:8px;padding:11px 16px;font-weight:700;cursor:pointer;display:inline-block}.primary{background:var(--blue);color:#fff}.secondary{background:var(--navy);color:#fff}.ghost{background:#e8eff2;color:var(--navy)}
+.sheet{background:#fff;box-shadow:0 8px 30px #0001;margin:18px auto;padding:28px;max-width:900px}.head{display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:center;border-bottom:3px solid var(--blue);padding-bottom:15px}
+.logo{height:85px;border:1px dashed #aabac2;border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden;color:var(--muted);font-size:12px;text-align:center}.logo img{max-width:100%;max-height:100%}
+h1{font-size:23px;color:var(--navy);margin:0 0 5px}.sub{color:var(--muted);font-size:13px}.code{display:inline-block;background:var(--navy);color:#fff;padding:4px 8px;border-radius:5px;font-size:12px;margin-top:7px}
+h2{font-size:16px;color:var(--navy);border-left:5px solid var(--cyan);padding-left:9px;margin-top:25px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+label{font-size:12px;font-weight:700;color:#41515b;display:block;margin-bottom:4px}input[type=text],input[type=number],input[type=date],input[type=time],textarea,select{width:100%;padding:9px;border:1px solid #bdcbd1;border-radius:6px;font:inherit;background:#fff}textarea{min-height:68px;resize:vertical}
+.checks{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.check{background:var(--light);padding:9px;border-radius:7px;font-size:13px}.check input{margin-right:7px}
+.note{background:var(--warn);border-left:4px solid #e0a33a;padding:11px;font-size:12px;margin:12px 0}.tablewrap{overflow-x:auto}.tablewrap table{min-width:1180px}.mini-photo{width:92px;height:72px;border:1px dashed #a9bac2;border-radius:6px;display:flex;align-items:center;justify-content:center;overflow:hidden;font-size:10px;color:var(--muted);background:#fafcfd}.mini-photo img{max-width:100%;max-height:100%;object-fit:contain}
+table{width:100%;border-collapse:collapse;font-size:12px}th{background:var(--navy);color:#fff;padding:8px}td{border:1px solid var(--line);padding:5px;vertical-align:middle}td input,td select{padding:6px;font-size:12px}
+.result{margin-top:14px;background:var(--navy);color:#fff;border-radius:9px;padding:16px}.result strong{font-size:18px}.small{font-size:10px;color:var(--muted);line-height:1.4}
+.photo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.photo{border:1px dashed #9eb0b9;min-height:155px;border-radius:8px;padding:8px;display:flex;align-items:center;justify-content:center;overflow:hidden}.photo img{max-width:100%;max-height:230px}
+.evidence-section,.signature-block{break-inside:avoid;page-break-inside:avoid}.signature-block{margin:35px auto 8px;text-align:center;width:58%}.signature-line{border-top:1px solid #333;margin-bottom:7px}.footer{border-top:1px solid var(--line);margin-top:25px;padding-top:10px;text-align:center}
+@media(max-width:700px){.grid,.grid3,.checks,.photo-grid,.head{grid-template-columns:1fr}.wrap{padding:8px}.sheet{padding:17px;margin:8px auto}}
+@media print{body{background:#fff}.toolbar,.no-print{display:none!important}.wrap{padding:0}.sheet{box-shadow:none;margin:0;max-width:none;padding:10mm}input,textarea,select{border:0;border-bottom:1px solid #999;border-radius:0;padding:4px}.check{background:#fff;border:1px solid #ddd}.evidence-section,.photo-grid,.photo,.signature-block{break-inside:avoid!important;page-break-inside:avoid!important}.result{-webkit-print-color-adjust:exact;print-color-adjust:exact}table{break-inside:avoid;font-size:8px}.tablewrap{overflow:visible}.tablewrap table{min-width:0;width:100%}.mini-photo{width:60px;height:48px}.filebtn.no-print{display:none!important}}
+</style>
+</head>
+<body>
+<div class="toolbar">
+<label class="filebtn ghost">Subir logo <input id="logoFile" type="file" accept="image/*" hidden></label>
+<button class="ghost" type="button" id="btnClear">Limpiar</button>
+<button class="secondary" type="button" id="btnEvaluate">Evaluar prueba</button>
+<button class="primary" type="button" id="btnPrint">Imprimir / Guardar PDF</button>
+</div>
+<div class="wrap"><div class="sheet">
+<div class="head"><div class="logo" id="logoBox">LOGO DEL PROFESIONAL<br>O EMPRESA</div><div>
+<h1>AquaCheck – Prueba Hidráulica de Descarte y Sectorización</h1>
+<div class="sub">Registro de campo para comparar sectores y priorizar la investigación de una posible pérdida.</div>
+<span class="code">AF-03 | Pack Profesional Aquaelite – Detección de Fugas</span></div></div>
 
+<h2>A. Datos del servicio y sector</h2>
+<div class="grid">
+<div><label>Cliente / Empresa</label><input type="text"></div><div><label>Proyecto / Inmueble</label><input type="text"></div>
+<div><label>Ubicación</label><input type="text"></div><div><label>Profesional / Técnico</label><input type="text"></div>
+<div><label>Sector evaluado</label><input type="text"></div><div><label>Nivel / Piso</label><input type="text"></div>
+<div><label>Red</label><select><option>Agua fría</option><option>Agua caliente</option><option>Otra</option></select></div>
+<div><label>Material / diámetro</label><input type="text" placeholder="Ej. PVC / 1 pulg."></div>
+</div>
+<div class="grid3" style="margin-top:12px"><div><label>Fecha</label><input type="date"></div><div><label>Hora</label><input type="time"></div><div><label>Referencia AF-02</label><input type="text" placeholder="R2 / observación"></div></div>
+
+<h2>B. Motivo de la prueba</h2>
+<div class="checks">
+<label class="check"><input type="checkbox">Múltiples baños / baterías</label><label class="check"><input type="checkbox">Varios ambientes</label>
+<label class="check"><input type="checkbox">Varios pisos / ramales</label><label class="check"><input type="checkbox">Red extensa</label>
+<label class="check"><input type="checkbox">Pérdida de presión reportada</label><label class="check"><input type="checkbox">Indicado por AF-02</label>
+</div>
+
+<h2>C. Verificación previa</h2>
+<div class="checks" id="prechecks">
+<label class="check"><input type="checkbox">Sector correctamente identificado</label><label class="check"><input type="checkbox">Plano / croquis revisado si está disponible</label>
+<label class="check"><input type="checkbox">Sector puede aislarse</label><label class="check"><input type="checkbox">Válvulas identificadas / verificadas</label>
+<label class="check"><input type="checkbox">Puntos terminales verificados</label><label class="check"><input type="checkbox">Conexiones correctamente cerradas</label>
+<label class="check"><input type="checkbox">Inspección visual realizada</label><label class="check"><input type="checkbox">Equipo y manómetro verificados</label>
+<label class="check"><input type="checkbox">Condiciones seguras para realizar la prueba</label>
+</div>
+<div class="note"><b>Alcance:</b> AF-03 documenta una prueba diagnóstica de descarte y comparación de sectores. No establece por sí mismo una presión o duración universal ni sustituye una prueba formal de aceptación aplicable a una instalación específica.</div>
+
+<h2>D. Equipo y condiciones de prueba</h2>
+<div class="grid">
+<div><label>Equipo utilizado</label><input type="text"></div><div><label>Identificación del equipo</label><input type="text"></div>
+<div><label>Manómetro / rango</label><input type="text"></div><div><label>Verificación / calibración disponible</label><select><option>Por verificar</option><option>Sí</option><option>No</option><option>No aplica</option></select></div>
+<div><label>Condición inicial / estabilización</label><input type="text"></div><div><label>Temperatura / condición relevante</label><input type="text"></div>
+</div>
+
+
+<h2>E. Control previo antes del registro comparativo</h2>
+<div class="checks" id="controlchecks">
+<label class="check"><input type="checkbox">Conexiones del equipo revisadas</label>
+<label class="check"><input type="checkbox">Puntos terminales con tapón</label>
+<label class="check"><input type="checkbox">Se retiró el aire en el sistema evaluado</label>
+<label class="check"><input type="checkbox">Válvulas cerradas y revisadas</label>
+<label class="check"><input type="checkbox">Condiciones de nivelación y ajustes de la tubería conformes (en obras nuevas)</label>
+<label class="check"><input type="checkbox">Verificaciones externas visibles realizadas</label>
+</div>
+
+<h2>F. Registro comparativo de sectores</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Sector</th><th>P. inicial</th><th>Hora inicio</th><th>Foto manómetro inicial</th><th>P. final</th><th>Hora final</th><th>Foto manómetro final</th><th>ΔP</th><th>Observación</th></tr></thead>
+<tbody>
+<tr>
+<td><input type="text" value="A"></td>
+<td><input class="pi" type="number" step="0.01"></td>
+<td><input type="time"></td>
+<td><label class="filebtn ghost no-print">Subir<input type="file" accept="image/*" hidden onchange="showMiniPhoto(this,'miA')"></label><div class="mini-photo" id="miA">Sin foto</div></td>
+<td><input class="pf" type="number" step="0.01"></td>
+<td><input type="time"></td>
+<td><label class="filebtn ghost no-print">Subir<input type="file" accept="image/*" hidden onchange="showMiniPhoto(this,'mfA')"></label><div class="mini-photo" id="mfA">Sin foto</div></td>
+<td><input class="dp" type="text" readonly></td>
+<td><input type="text"></td>
+</tr>
+<tr>
+<td><input type="text" value="B"></td>
+<td><input class="pi" type="number" step="0.01"></td>
+<td><input type="time"></td>
+<td><label class="filebtn ghost no-print">Subir<input type="file" accept="image/*" hidden onchange="showMiniPhoto(this,'miB')"></label><div class="mini-photo" id="miB">Sin foto</div></td>
+<td><input class="pf" type="number" step="0.01"></td>
+<td><input type="time"></td>
+<td><label class="filebtn ghost no-print">Subir<input type="file" accept="image/*" hidden onchange="showMiniPhoto(this,'mfB')"></label><div class="mini-photo" id="mfB">Sin foto</div></td>
+<td><input class="dp" type="text" readonly></td>
+<td><input type="text"></td>
+</tr>
+<tr>
+<td><input type="text" value="C"></td>
+<td><input class="pi" type="number" step="0.01"></td>
+<td><input type="time"></td>
+<td><label class="filebtn ghost no-print">Subir<input type="file" accept="image/*" hidden onchange="showMiniPhoto(this,'miC')"></label><div class="mini-photo" id="miC">Sin foto</div></td>
+<td><input class="pf" type="number" step="0.01"></td>
+<td><input type="time"></td>
+<td><label class="filebtn ghost no-print">Subir<input type="file" accept="image/*" hidden onchange="showMiniPhoto(this,'mfC')"></label><div class="mini-photo" id="mfC">Sin foto</div></td>
+<td><input class="dp" type="text" readonly></td>
+<td><input type="text"></td>
+</tr>
+<tr>
+<td><input type="text" value="D"></td>
+<td><input class="pi" type="number" step="0.01"></td>
+<td><input type="time"></td>
+<td><label class="filebtn ghost no-print">Subir<input type="file" accept="image/*" hidden onchange="showMiniPhoto(this,'miD')"></label><div class="mini-photo" id="miD">Sin foto</div></td>
+<td><input class="pf" type="number" step="0.01"></td>
+<td><input type="time"></td>
+<td><label class="filebtn ghost no-print">Subir<input type="file" accept="image/*" hidden onchange="showMiniPhoto(this,'mfD')"></label><div class="mini-photo" id="mfD">Sin foto</div></td>
+<td><input class="dp" type="text" readonly></td>
+<td><input type="text"></td>
+</tr>
+</tbody></table></div>
+<div class="small" style="margin-top:5px">ΔP se calcula como presión inicial menos presión final. La magnitud debe interpretarse según las condiciones reales de la prueba; el formulario no define automáticamente un umbral de fuga.</div>
+
+<div class="grid" style="margin-top:14px">
+<div><label>¿Se identificó una causa externa que explique la variación? (si aplica)</label>
+<select id="causa"><option value="pv">Por verificar / No aplica</option><option value="si">Sí</option><option value="no">No</option></select></div>
+<div><label>Sector que requiere mayor investigación</label><input id="sectorPrior" type="text"></div>
+</div>
+<div style="margin-top:10px"><label>Descripción de la causa externa o motivo de priorización del sector</label><textarea id="causaDesc"></textarea></div>
+
+<h2>G. Decisión AquaCheck</h2>
+<div class="result"><div class="small" style="color:#dcebf0">RESULTADO SUGERIDO</div><strong id="resultado">Presione “Evaluar prueba”</strong><div id="detalle" style="margin-top:5px;font-size:12px"></div></div>
+<div class="small" style="margin-top:7px"><b>PH-1:</b> sin evidencia observada bajo las condiciones registradas. &nbsp; <b>PH-2:</b> resultado no concluyente / requiere control. &nbsp; <b>PH-3:</b> sector con evidencia de posible pérdida; continuar investigación localizada.</div>
+
+<section class="evidence-section">
+<h2>H. Evidencias fotográficas</h2>
+<div class="photo-grid">
+<div><label class="filebtn ghost no-print">Agregar foto 1 <input type="file" accept="image/*" hidden onchange="showPhoto(this,'p1')"></label><div class="photo" id="p1">Lectura inicial / montaje</div><input type="text" placeholder="Descripción"></div>
+<div><label class="filebtn ghost no-print">Agregar foto 2 <input type="file" accept="image/*" hidden onchange="showPhoto(this,'p2')"></label><div class="photo" id="p2">Lectura final / sector</div><input type="text" placeholder="Descripción"></div>
+</div></section>
+
+<h2>I. Conclusión y observaciones</h2>
+<div><label>Conclusión técnica</label><textarea id="conclusion"></textarea></div>
+<div style="margin-top:10px"><label>Observaciones / siguiente acción</label><textarea></textarea></div>
+<div class="grid" style="margin-top:12px"><div><label>Responsable</label><input type="text"></div><div><label>CIP / Registro (si corresponde)</label><input type="text"></div></div>
+<div class="signature-block"><div class="signature-line"></div><div><b>Firma del profesional responsable</b></div><div class="small">Nombre / CIP o registro, cuando corresponda</div></div>
+
+<div class="footer small">Formato basado en metodología Aquaelite® – AF-03. Los resultados deben interpretarse según el alcance, las condiciones de la instalación y las condiciones registradas durante la prueba.</div>
+</div></div>
+<script>
+document.getElementById('logoFile').addEventListener('change',function(){const f=this.files[0];if(!f)return;const r=new FileReader();r.onload=e=>document.getElementById('logoBox').innerHTML='<img src="'+e.target.result+'">';r.readAsDataURL(f)});
+function showPhoto(inp,id){const f=inp.files[0];if(!f)return;const r=new FileReader();r.onload=e=>document.getElementById(id).innerHTML='<img src="'+e.target.result+'">';r.readAsDataURL(f)}
+function showMiniPhoto(inp,id){const f=inp.files[0];if(!f)return;const r=new FileReader();r.onload=e=>document.getElementById(id).innerHTML='<img src="'+e.target.result+'">';r.readAsDataURL(f)}
+function deltas(){document.querySelectorAll('tbody tr').forEach(tr=>{const a=parseFloat(tr.querySelector('.pi').value),b=parseFloat(tr.querySelector('.pf').value),d=tr.querySelector('.dp');d.value=(!isNaN(a)&&!isNaN(b))?(a-b).toFixed(2):''})}
+document.querySelectorAll('.pi,.pf').forEach(x=>x.addEventListener('input',deltas));
+function evaluate(){
+ deltas();
+ const rows=[...document.querySelectorAll('tbody tr')];
+ const vals=rows.map(tr=>({s:tr.cells[0].querySelector('input').value||'Sector',d:parseFloat(tr.querySelector('.dp').value)})).filter(x=>!isNaN(x.d));
+ const prior=document.getElementById('sectorPrior').value.trim();
+ const causa=document.getElementById('causa').value;
+ let title='PH-2 – Resultado no concluyente',detail='Complete y controle las condiciones de prueba antes de establecer una ruta.';
+ if(vals.length){
+   const pos=vals.filter(x=>x.d>0);
+   if(pos.length===0){title='PH-1 – Sin evidencia observada';detail='No se registró disminución de presión en los sectores con datos completos. Interpretar únicamente bajo las condiciones documentadas.'}
+   else if(causa==='si'){title='PH-2 – Controlar y repetir';detail='Se registró variación y existe una causa externa identificada. Corrija/controla esa condición antes de interpretar el sector.'}
+   else if(causa==='no' && prior){title='PH-3 – Sector con evidencia de posible pérdida';detail='Sector priorizado: '+prior+'. Continuar con investigación localizada (AF-04) y correlacionar con otras evidencias.'}
+   else {title='PH-2 – Resultado no concluyente';detail='Existe variación registrada. Revise controles y defina el sector que requiere mayor investigación antes de continuar.'}
+ }
+ document.getElementById('resultado').textContent=title;document.getElementById('detalle').textContent=detail;
+ const c=document.getElementById('conclusion');if(!c.value)c.value=title+'. '+detail;
+}
+function clearAll(){if(!confirm('¿Limpiar todos los campos del formulario?'))return;document.querySelectorAll('input[type=text],input[type=number],textarea').forEach(x=>x.value='');document.querySelectorAll('input[type=checkbox]').forEach(x=>x.checked=false);document.querySelectorAll('tbody tr').forEach((tr,i)=>tr.cells[0].querySelector('input').value=String.fromCharCode(65+i));document.getElementById('resultado').textContent='Presione “Evaluar prueba”';document.getElementById('detalle').textContent='';document.getElementById('logoBox').innerHTML='LOGO DEL PROFESIONAL<br>O EMPRESA';document.getElementById('p1').textContent='Lectura inicial / montaje';document.getElementById('p2').textContent='Lectura final / sector';document.querySelectorAll('.mini-photo').forEach(x=>x.textContent='Sin foto')}
+document.getElementById('btnEvaluate').addEventListener('click',evaluate);document.getElementById('btnClear').addEventListener('click',clearAll);document.getElementById('btnPrint').addEventListener('click',()=>window.print());
+</script>
+</body></html>
