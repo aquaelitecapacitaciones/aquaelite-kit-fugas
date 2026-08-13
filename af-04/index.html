@@ -1,1 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AF-04 | AquaCheck Guía Asistida D-tect 200 C</title>
+<style>
+:root{--n:#0b2239;--b:#087ea4;--c:#19a9c7;--l:#eef6f8;--ln:#d7e5ea;--t:#17212b;--m:#65737d;--w:#fff4df;--ok:#eaf7ef}
+*{box-sizing:border-box}body{margin:0;background:#f4f7f8;color:var(--t);font-family:Arial,sans-serif}.bar{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--ln);padding:10px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+button,.filebtn{border:0;border-radius:8px;padding:11px 16px;font-weight:700;cursor:pointer}.pri{background:var(--b);color:#fff}.sec{background:var(--n);color:#fff}.ghost{background:#e8eff2;color:var(--n)}
+.sheet{background:#fff;max-width:900px;margin:18px auto;padding:28px;box-shadow:0 8px 30px #0001}.head{display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:center;border-bottom:3px solid var(--b);padding-bottom:15px}.logo{height:85px;border:1px dashed #aabac2;border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden;color:var(--m);font-size:12px;text-align:center}.logo img,.photo img{max-width:100%;max-height:100%;object-fit:contain}
+h1{font-size:23px;color:var(--n);margin:0 0 5px}.sub{color:var(--m);font-size:13px}.code{display:inline-block;background:var(--n);color:#fff;padding:4px 8px;border-radius:5px;font-size:12px;margin-top:7px}h2{font-size:16px;color:var(--n);border-left:5px solid var(--c);padding-left:9px;margin-top:25px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}label{font-size:12px;font-weight:700;color:#41515b;display:block;margin-bottom:4px}input,textarea,select{width:100%;padding:9px;border:1px solid #bdcbd1;border-radius:6px;font:inherit;background:#fff}textarea{min-height:72px}.checks{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.check{background:var(--l);padding:10px;border-radius:7px;font-size:13px}.check input{width:auto;margin-right:7px}.note{background:var(--w);border-left:4px solid #e0a33a;padding:11px;font-size:12px;margin:12px 0}.good{background:var(--ok);border-left:4px solid #4d9b6e;padding:11px;font-size:12px;margin:12px 0}
+.guide{border:1px solid var(--ln);border-radius:8px;overflow:hidden;margin:10px 0}.guide .title{background:var(--n);color:#fff;padding:9px;font-weight:700;font-size:13px}.guide .body{padding:10px;font-size:12px;line-height:1.5}
+.colors{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}.color{border:1px solid var(--ln);border-radius:7px;padding:8px;text-align:center;font-size:11px}.dot{width:25px;height:25px;border-radius:50%;margin:0 auto 5px;border:1px solid #777}.yellow{background:#f2d44b}.blue{background:#4685d1}.turq{background:#49c6c6}.white{background:white}.gray{background:#aaa}
+.photos{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.photo{border:1px dashed #9eb0b9;min-height:170px;border-radius:8px;padding:8px;display:flex;align-items:center;justify-content:center;overflow:hidden}.small{font-size:10px;color:var(--m);line-height:1.4}.status{background:var(--n);color:#fff;border-radius:9px;padding:14px;margin-top:15px}.sig{margin:35px auto 8px;text-align:center;width:58%;break-inside:avoid}.sigline{border-top:1px solid #333;margin-bottom:7px}.footer{border-top:1px solid var(--ln);margin-top:25px;padding-top:10px;text-align:center}
+@media(max-width:700px){.grid,.grid3,.checks,.photos,.head,.colors{grid-template-columns:1fr}.sheet{margin:8px;padding:17px}}
+@media print{body{background:#fff}.bar,.no-print{display:none!important}.sheet{box-shadow:none;margin:0;max-width:none;padding:10mm}input,textarea,select{border:0;border-bottom:1px solid #999;border-radius:0;padding:4px}.check{background:#fff;border:1px solid #ddd}.photos,.photo,.sig,.guide{break-inside:avoid!important;page-break-inside:avoid!important}.status{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style></head>
+<body>
+<div class="bar"><label class="filebtn ghost">Subir logo<input id="logoFile" type="file" accept="image/*" hidden></label><button id="clear" class="ghost">Limpiar</button><button id="verify" class="sec">Verificar configuración</button><button id="print" class="pri">Imprimir / Guardar PDF</button></div>
+<div class="sheet">
+<div class="head"><div class="logo" id="logo">LOGO DEL PROFESIONAL<br>O EMPRESA</div><div><h1>AquaCheck – Localización Asistida de Fugas con Scanner</h1><div class="sub">Guía de uso y registro descriptivo del Bosch PRO D-tect 200 C para reducir errores de configuración, lectura e interpretación.</div><span class="code">AF-04 | Pack Profesional Aquaelite – Detección de Fugas</span></div></div>
 
+<h2>A. Datos del servicio</h2><div class="grid"><div><label>Cliente / Empresa</label><input></div><div><label>Proyecto / Inmueble</label><input></div><div><label>Ubicación</label><input></div><div><label>Profesional / Técnico</label><input></div><div><label>Zona / ambiente evaluado</label><input></div><div><label>Nivel / Piso</label><input></div></div>
+<div class="grid3" style="margin-top:12px"><div><label>Fecha</label><input type="date"></div><div><label>Hora</label><input type="time"></div><div><label>Referencia previa</label><input placeholder="AF-02 / AF-03"></div></div>
+
+<h2>B. Antes de usar el equipo</h2>
+<div class="checks" id="setup">
+<label class="check"><input type="checkbox">La zona de investigación fue previamente delimitada.</label>
+<label class="check"><input type="checkbox">Se revisó AF-02 y/o AF-03 cuando corresponde.</label>
+<label class="check"><input type="checkbox">Se revisó el recorrido probable de la red y/o planos disponibles.</label>
+<label class="check"><input type="checkbox">El área del sensor del equipo está seca.</label>
+<label class="check"><input type="checkbox">El equipo se atemperó si existió un cambio brusco de temperatura.</label>
+<label class="check"><input type="checkbox">Se verificó que no existan fuentes cercanas de fuerte interferencia electromagnética.</label>
+</div>
+<div class="note"><b>Importante:</b> La identificación de una zona con mayor indicación de humedad no confirma por sí sola la ubicación exacta de una fuga. El resultado debe correlacionarse con el <b>Diagnóstico Inicial (AF-02)</b>, la <b>Prueba Hidráulica de Descarte y Sectorización (AF-03)</b>, el trazado de la instalación y las demás evidencias obtenidas durante la evaluación.</div>
+
+<h2>C. Selección del modo correcto</h2>
+<div class="guide"><div class="title">Modo del equipo</div><div class="body">Seleccione en el equipo <b>&lt;Leakage Detection&gt; (Localización de fugas)</b>. Este registro está diseñado para documentar el uso de ese modo. No utilice las indicaciones del modo <b>&lt;Object Detection&gt;</b> como confirmación de una fuga.</div></div>
+<div class="checks" id="mode"><label class="check"><input type="checkbox">Ingresé al menú principal.</label><label class="check"><input type="checkbox">Seleccioné <b>&lt;Leakage Detection&gt; (Localización de fugas)</b>.</label><label class="check"><input type="checkbox">Confirmé que no estoy interpretando <b>&lt;Object Detection&gt;</b> como detección de fuga.</label><label class="check"><input type="checkbox">La superficie evaluada es comparable a lo largo del barrido.</label></div>
+
+<h2>D. Zona de máxima indicación de humedad</h2>
+<div class="guide"><div class="title">Qué debe buscar durante el barrido</div><div class="body">Observe cómo cambia la indicación de humedad relativa del material mientras desplaza el equipo. Identifique la <b>zona o rango donde la indicación alcanza su máximo</b> dentro del recorrido. Ese máximo puede abarcar una franja y no necesariamente un único punto.</div></div>
+<div class="good"><b>Definición Aquaelite – Patrón de humedad:</b> comportamiento observado durante el barrido cuando la indicación aumenta, alcanza una zona de máxima lectura y posteriormente disminuye. Se utiliza como referencia descriptiva y debe correlacionarse con las demás evidencias del diagnóstico.</div>
+
+<h2>E. Procedimiento guiado de inspección</h2>
+<div class="checks" id="process"><label class="check"><input type="checkbox">Definí una zona concreta de barrido a partir del diagnóstico previo.</label><label class="check"><input type="checkbox">Mantengo el equipo apoyado y desplazado de manera estable sobre la superficie.</label><label class="check"><input type="checkbox">Realizo el recorrido de forma lenta, continua y ordenada.</label><label class="check"><input type="checkbox">Identifiqué el punto donde comienza a aumentar la indicación.</label><label class="check"><input type="checkbox">Identifiqué el rango donde se presenta la máxima indicación.</label><label class="check"><input type="checkbox">Identifiqué el punto donde la indicación comienza a disminuir.</label><label class="check"><input type="checkbox">Repetí el barrido para comprobar que el patrón se presenta aproximadamente en la misma zona.</label><label class="check"><input type="checkbox">Guardé una captura de pantalla del equipo para documentar la lectura.</label></div>
+<div class="note"><b>Atención:</b> cambios de material de la superficie, juntas, heterogeneidades del soporte u otros elementos pueden alterar la lectura. Registre estas condiciones y evite interpretar un máximo aislado como confirmación automática del punto exacto de fuga.</div>
+
+<h2>F. Registro del patrón de humedad</h2>
+<div class="grid"><div><label>Inicio del incremento</label><input placeholder="Ej. 0.80 m desde referencia"></div><div><label>Rango de máxima lectura</label><input placeholder="Ej. 1.10 m a 1.25 m"></div><div><label>Fin del descenso</label><input placeholder="Ej. 1.55 m desde referencia"></div><div><label>¿El patrón se repite en una segunda pasada?</label><select><option>Por verificar</option><option>Sí</option><option>No</option></select></div><div><label>¿Coincide con el sector priorizado previamente?</label><select><option>Por verificar</option><option>Sí</option><option>No</option><option>No aplica</option></select></div><div><label>¿Coincide con manifestación visible?</label><select><option>Por verificar</option><option>Sí</option><option>No</option><option>No aplica</option></select></div></div>
+<div style="margin-top:10px"><label>Descripción de lo observado en pantalla</label><textarea placeholder="Describa el comportamiento de la indicación y el rango de máxima lectura."></textarea></div><div style="margin-top:10px"><label>Condiciones que podrían afectar la lectura</label><textarea placeholder="Juntas, cambio de material, humedad generalizada, interferencias, elementos estructurales, etc."></textarea></div>
+
+<section><h2>G. Evidencias fotográficas y capturas</h2><div class="photos"><div><label class="filebtn ghost no-print">Agregar evidencia 1<input type="file" accept="image/*" hidden onchange="photo(this,'p1')"></label><div class="photo" id="p1">Vista general de la zona</div><input placeholder="Descripción"></div><div><label class="filebtn ghost no-print">Agregar evidencia 2<input type="file" accept="image/*" hidden onchange="photo(this,'p2')"></label><div class="photo" id="p2">Captura de &lt;Leakage Detection&gt;</div><input placeholder="Descripción"></div><div><label class="filebtn ghost no-print">Agregar evidencia 3<input type="file" accept="image/*" hidden onchange="photo(this,'p3')"></label><div class="photo" id="p3">Rango de máxima indicación</div><input placeholder="Descripción"></div><div><label class="filebtn ghost no-print">Agregar evidencia 4<input type="file" accept="image/*" hidden onchange="photo(this,'p4')"></label><div class="photo" id="p4">Evidencia complementaria</div><input placeholder="Descripción"></div></div></section>
+<h2>I. Verificación de configuración</h2>
+<div class="status"><b id="status">Complete los checks y pulse “Verificar configuración”.</b><div id="detail" style="font-size:12px;margin-top:5px"></div></div>
+<div class="small" style="margin-top:6px">Esta verificación únicamente comprueba el cumplimiento de pasos de uso registrados en el formulario. No determina ni confirma automáticamente la existencia o ubicación exacta de una fuga.</div>
+
+<h2>J. Conclusión descriptiva del profesional</h2>
+<div><label>Zona que requiere verificación / intervención complementaria</label><input></div>
+<div style="margin-top:10px"><label>Conclusión técnica</label><textarea></textarea></div>
+<div style="margin-top:10px"><label>Recomendación / siguiente acción</label><textarea></textarea></div>
+<div class="grid" style="margin-top:12px"><div><label>Responsable</label><input></div><div><label>CIP / Registro (si corresponde)</label><input></div></div>
+<div class="sig"><div class="sigline"></div><b>Firma del profesional responsable</b><div class="small">Nombre / CIP o registro, cuando corresponda</div></div>
+<div class="footer small">AF-04 – Metodología Aquaelite®. Herramienta complementaria; no sustituye el manual oficial de operación y seguridad del fabricante.</div>
+</div>
+<script>
+const read=(f,cb)=>{if(!f)return;let r=new FileReader();r.onload=e=>cb(e.target.result);r.readAsDataURL(f)};
+logoFile.onchange=()=>read(logoFile.files[0],x=>logo.innerHTML='<img src="'+x+'">');
+function photo(i,id){read(i.files[0],x=>document.getElementById(id).innerHTML='<img src="'+x+'">')}
+const verifyBtn=document.getElementById('verify')||document.getElementById('eval');
+verifyBtn.textContent='Verificar configuración';
+verifyBtn.onclick=()=>{let all=[...document.querySelectorAll('#setup input,#mode input,#process input')],done=all.filter(x=>x.checked).length;let st=document.getElementById('status'),dt=document.getElementById('detail');if(done===all.length){st.textContent='Configuración y controles registrados completos';dt.textContent='Los pasos de preparación, selección de modo y procedimiento guiado han sido marcados como realizados.'}else{st.textContent='Revisión pendiente';dt.textContent='Se han confirmado '+done+' de '+all.length+' controles. Revise los puntos pendientes antes de cerrar el registro.'}};
+(document.getElementById('print')).onclick=()=>window.print();
+(document.getElementById('clear')).onclick=()=>{if(!confirm('¿Limpiar todos los campos?'))return;document.querySelectorAll('input:not([type=file]),textarea').forEach(x=>x.value='');document.querySelectorAll('input[type=checkbox]').forEach(x=>x.checked=false);document.querySelectorAll('select').forEach(x=>x.selectedIndex=0);let st=document.getElementById('status'),dt=document.getElementById('detail');if(st)st.textContent='Complete los checks y pulse “Verificar configuración”.';if(dt)dt.textContent='';logo.innerHTML='LOGO DEL PROFESIONAL<br>O EMPRESA';['Vista general de la zona','Captura de <Leakage Detection>','Rango de máxima indicación','Evidencia complementaria'].forEach((t,i)=>document.getElementById('p'+(i+1)).textContent=t)};
+</script></body></html>
