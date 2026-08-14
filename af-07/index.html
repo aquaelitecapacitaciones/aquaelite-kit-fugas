@@ -1,1 +1,290 @@
-AF-07
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AF-07 | AquaCotiza – Cotizador y Guía Comercial</title>
+<style>
+:root{--n:#0b2239;--b:#087ea4;--c:#19a9c7;--l:#eef6f8;--ln:#d7e5ea;--t:#17212b;--m:#65737d;--w:#fff4df;--ok:#eaf7ef}
+*{box-sizing:border-box}body{margin:0;background:#f4f7f8;color:var(--t);font-family:Arial,Helvetica,sans-serif}
+.bar{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--ln);padding:10px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+button,.filebtn{border:0;border-radius:8px;padding:11px 16px;font-weight:700;cursor:pointer}.pri{background:var(--b);color:#fff}.sec{background:var(--n);color:#fff}.ghost{background:#e8eff2;color:var(--n)}
+.sheet{background:#fff;max-width:960px;margin:18px auto;padding:28px;box-shadow:0 8px 30px #0001}
+.head{display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:center;border-bottom:3px solid var(--b);padding-bottom:15px}
+.logo{height:85px;border:1px dashed #aabac2;border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden;color:var(--m);font-size:12px;text-align:center}.logo img{max-width:100%;max-height:100%;object-fit:contain}
+h1{font-size:24px;color:var(--n);margin:0 0 5px}.sub{color:var(--m);font-size:13px}.code{display:inline-block;background:var(--n);color:#fff;padding:4px 8px;border-radius:5px;font-size:12px;margin-top:7px}
+h2{font-size:17px;color:var(--n);border-left:5px solid var(--c);padding-left:9px;margin-top:25px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+label{font-size:12px;font-weight:700;color:#41515b;display:block;margin-bottom:4px}input,textarea,select{width:100%;padding:9px;border:1px solid #bdcbd1;border-radius:6px;font:inherit;background:#fff}textarea{min-height:100px;resize:vertical}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.card{border:1px solid var(--ln);border-radius:9px;padding:12px;background:#fafcfd}.card strong{color:var(--n)}
+.note{background:var(--w);border-left:4px solid #e0a33a;padding:11px;font-size:12px;margin:12px 0}.good{background:var(--ok);border-left:4px solid #4d9b6e;padding:11px;font-size:12px;margin:12px 0}
+.result{background:var(--n);color:#fff;border-radius:10px;padding:16px;margin-top:12px}.big{font-size:28px;font-weight:700;margin-top:4px}.mini{font-size:11px;opacity:.9}
+.guide{border:1px solid var(--ln);border-radius:9px;overflow:hidden;margin:10px 0}.guide .title{background:var(--n);color:#fff;padding:9px;font-weight:700}.guide .body{padding:11px;font-size:13px;line-height:1.5}
+.small{font-size:10px;color:var(--m);line-height:1.4}.footer{border-top:1px solid var(--ln);margin-top:25px;padding-top:10px;text-align:center}
+@media(max-width:720px){.grid,.grid3,.cards,.head{grid-template-columns:1fr}.sheet{margin:8px;padding:17px}}
+@media print{body{background:#fff}.bar{display:none}.sheet{box-shadow:none;margin:0;max-width:none;padding:10mm}input,textarea,select{border:0;border-bottom:1px solid #999;border-radius:0;padding:4px}.card,.guide,.note,.good,.result{break-inside:avoid;page-break-inside:avoid}.result{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+.quote-sheet{margin-top:32px;border-top:3px solid var(--b);padding-top:22px}
+.quote-head{display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:center;margin-bottom:18px}
+.quote-logo{height:72px;border:1px dashed #aabac2;border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden;color:var(--m);font-size:11px;text-align:center}
+.quote-logo img{max-width:100%;max-height:100%;object-fit:contain}
+.quote-title{font-size:22px;font-weight:700;color:var(--n);margin:0 0 5px}
+.quote-box{border:1px solid var(--ln);border-radius:8px;padding:12px;margin:10px 0}
+.quote-total{background:var(--n);color:#fff;border-radius:9px;padding:14px;margin-top:14px}
+.quote-total .amount{font-size:26px;font-weight:700}
+.quote-sign{margin:40px auto 8px;width:55%;text-align:center}
+.quote-sign-line{border-top:1px solid #333;margin-bottom:7px}
+@media print{
+  .quote-sheet{page-break-before:always;border-top:0;margin-top:0;padding-top:0}
+  .quote-box,.quote-total,.quote-head,.quote-sign{break-inside:avoid!important;page-break-inside:avoid!important}
+}
+
+</style>
+</head>
+<body>
+<div class="bar">
+<label class="filebtn ghost">Subir logo<input id="logoFile" type="file" accept="image/*" hidden></label>
+<button class="ghost" id="clear">Limpiar</button>
+<button class="sec" id="calc">Calcular precio</button>
+<button class="sec" id="proposal">Generar propuesta</button>
+<button class="pri" type="button" id="print">Imprimir / Guardar PDF</button>
+</div>
+
+<div class="sheet">
+<div class="head">
+<div class="logo" id="logo">LOGO DEL PROFESIONAL<br>O EMPRESA</div>
+<div>
+<h1>AquaCotiza – Cotizador y Guía Comercial</h1>
+<div class="sub">Calcula un precio comercial y convierte el diagnóstico técnico en una propuesta clara para tu cliente.</div>
+<span class="code">AF-07 | Pack Profesional Aquaelite – Detección de Fugas</span>
+</div>
+</div>
+
+<h2>A. Datos del cliente y oportunidad</h2>
+<div class="grid">
+<div><label>Cliente / Empresa</label><input id="cliente"></div>
+<div><label>Contacto</label><input></div>
+<div><label>Ubicación</label><input id="ubicacion"></div>
+<div><label>Tipo de inmueble</label><select id="inmueble"><option>Vivienda</option><option>Departamento / Multifamiliar</option><option>Oficina</option><option>Local comercial</option><option>Industrial</option><option>Otro</option></select></div>
+</div>
+
+<h2>B. ¿Qué servicio estás ofreciendo?</h2>
+<div class="grid">
+<div><label>Alcance comercial</label>
+<select id="servicio">
+<option value="diag">Diagnóstico inicial</option>
+<option value="sector">Diagnóstico + descarte / sectorización</option>
+<option value="local">Diagnóstico + sectorización + localización asistida</option>
+<option value="full">Servicio completo con intervención y prueba hidráulica final</option>
+</select></div>
+<div><label>Número estimado de ambientes / sectores</label><input id="sectores" type="number" min="1" value="1"></div>
+<div><label>Complejidad</label><select id="complejidad"><option value="1">Baja</option><option value="1.15">Media</option><option value="1.30">Alta</option></select></div>
+<div><label>Desplazamiento especial</label><select id="desplazamiento"><option value="0">No</option><option value="1">Sí</option></select></div>
+</div>
+
+<div class="cards" style="margin-top:12px">
+<div class="card"><strong>Diagnóstico inicial</strong><br><span class="small">Evaluación, antecedentes, síntomas y definición de la ruta técnica. AF-02.</span></div>
+<div class="card"><strong>Descarte / sectorización</strong><br><span class="small">Pruebas hidráulicas para reducir el área de investigación. AF-03.</span></div>
+<div class="card"><strong>Localización asistida</strong><br><span class="small">Uso documentado del scanner en una zona previamente delimitada. AF-04.</span></div>
+<div class="card"><strong>Cierre técnico</strong><br><span class="small">Intervención, hallazgo, reparación y prueba hidráulica final. AF-06.</span></div>
+</div>
+
+<h2>C. Costos del servicio</h2>
+<div class="grid3">
+<div><label>Horas Supervisor / Profesional responsable</label><input id="horasSup" type="number" min="0" step="0.5" value="2"></div>
+<div><label>PU hora Supervisor (S/)</label><input id="puSup" type="number" min="0" step="0.01"></div>
+<div><label>Subtotal Supervisor (S/)</label><input id="subSup" readonly></div>
+<div><label>Horas Personal de apoyo / Técnico</label><input id="horasApo" type="number" min="0" step="0.5" value="2"></div>
+<div><label>PU hora Personal de apoyo (S/)</label><input id="puApo" type="number" min="0" step="0.01"></div>
+<div><label>Subtotal Personal de apoyo (S/)</label><input id="subApo" readonly></div>
+<div><label>Movilidad / desplazamiento (S/)</label><input id="movilidad" type="number" min="0" step="0.01"></div>
+<div><label>Uso / amortización de equipos (S/)</label><input id="equipo" type="number" min="0" step="0.01"></div>
+<div><label>Consumibles / operación (S/)</label><input id="consumibles" type="number" min="0" step="0.01"></div>
+<div><label>Informe / documentación (S/)</label><input id="informe" type="number" min="0" step="0.01"></div>
+<div><label>Otros costos (S/)</label><input id="otros" type="number" min="0" step="0.01"></div>
+<div><label>Margen mínimo deseado (%)</label><input id="margenMin" type="number" min="0" max="90" step="1" value="25"></div>
+<div><label>Margen comercial deseado (%)</label><input id="margenCom" type="number" min="0" max="90" step="1" value="40"></div>
+</div>
+
+<div class="note"><b>Nota:</b> Los porcentajes son editables. La herramienta no fija una tarifa obligatoria; el profesional debe definirlos según costos, alcance, mercado, riesgos y condiciones particulares del servicio.</div>
+
+<h2>D. Resultado AquaCotiza</h2>
+<div class="grid">
+<div class="result"><div class="mini">COSTO OPERATIVO ESTIMADO</div><div class="big" id="costo">S/ 0.00</div></div>
+<div class="result"><div class="mini">PRECIO MÍNIMO RECOMENDADO</div><div class="big" id="pmin">S/ 0.00</div></div>
+<div class="result"><div class="mini">PRECIO COMERCIAL SUGERIDO</div><div class="big" id="pcom">S/ 0.00</div></div>
+<div class="result"><div class="mini">PRECIO FINAL QUE OFRECERÁS</div><input id="pfinal" type="number" min="0" step="0.01" style="font-size:22px;font-weight:700"></div>
+</div>
+<div class="small" style="margin-top:8px;line-height:1.55">
+<b>¿Cómo se calcula?</b> <b>Costo de personal:</b> (horas del Supervisor × PU hora Supervisor) + (horas del Personal de apoyo × PU hora Apoyo).
+<b>Costo operativo estimado:</b> suma del costo de personal, movilidad, uso/amortización de equipos, consumibles, documentación y otros costos, ajustada por la complejidad y cantidad de sectores evaluados.
+<b>Precio mínimo recomendado:</b> costo operativo estimado + margen mínimo definido por el profesional; representa una referencia por debajo de la cual podría reducirse la rentabilidad esperada.
+<b>Precio comercial sugerido:</b> costo operativo estimado + margen comercial definido por el profesional; sirve como referencia para establecer el precio de venta considerando especialización, equipos y valor técnico del servicio.
+<b>Precio final:</b> puede ser modificado según alcance, condiciones del proyecto y criterio comercial.
+<br><i>Los márgenes se aplican como recargo porcentual sobre el costo operativo, son editables y los resultados son referenciales; no constituyen una tarifa de mercado.</i>
+</div>
+
+<h2>E. Guía comercial – qué preguntar antes de dar precio</h2>
+<div class="guide"><div class="title">Preguntas mínimas</div><div class="body">
+1. ¿Dónde aparece la humedad o pérdida?<br>
+2. ¿Es un solo ambiente o hay varios baños / sectores?<br>
+3. ¿Ya realizaron alguna prueba hidráulica o de presión?<br>
+4. ¿Se conoce el recorrido aproximado de la tubería?<br>
+5. ¿Hay acceso a válvulas para aislar sectores?<br>
+6. ¿El cliente busca diagnóstico, localización o también reparación?<br>
+7. ¿En qué distrito / ciudad se encuentra el inmueble?
+</div></div>
+
+<h2>F. Cómo presentar el servicio</h2>
+<div class="good"><b>No vendas “pasar el scanner”.</b> Vende un proceso profesional de diagnóstico: evaluar → descartar → sectorizar → localizar → documentar → verificar.</div>
+<div class="cards">
+<div class="card"><strong>Evita decir</strong><br><span class="small">“Con el scanner encontramos exactamente la fuga.”</span></div>
+<div class="card"><strong>Mejor explica</strong><br><span class="small">“Reducimos el área de investigación y correlacionamos pruebas, trazado y lecturas para definir una zona probable antes de intervenir.”</span></div>
+<div class="card"><strong>Si hay muchos ambientes</strong><br><span class="small">Primero ofrece descarte y sectorización; no prometas localizar a ciegas.</span></div>
+<div class="card"><strong>Si ya existe una zona delimitada</strong><br><span class="small">Explica que el scanner forma parte de la localización asistida, no reemplaza el diagnóstico.</span></div>
+</div>
+
+<h2>G. Propuesta comercial automática</h2>
+<div><label>Texto para WhatsApp / cotización</label><textarea id="texto"></textarea></div>
+<div class="grid" style="margin-top:10px">
+<div><label>Incluye</label><textarea id="incluye">Evaluación técnica, registro del servicio y recomendaciones según el alcance contratado.</textarea></div>
+<div><label>No incluye / condiciones</label><textarea id="noincluye">Trabajos de albañilería, reposición de acabados o reparaciones no contempladas en el alcance, salvo que se indiquen expresamente.</textarea></div>
+</div>
+
+<h2>H. Cierre comercial</h2>
+<div class="guide"><div class="title">Cómo cerrar sin presionar</div><div class="body">
+Explica el alcance, el siguiente paso y el valor. Ejemplo: <b>“Con esta evaluación buscamos reducir el área de intervención antes de romper. Si estás de acuerdo, coordinamos fecha y te envío la confirmación del servicio.”</b>
+</div></div>
+
+
+<div class="quote-sheet" id="quoteSheet">
+  <div class="quote-head">
+    <div class="quote-logo" id="quoteLogo">LOGO DEL PROFESIONAL<br>O EMPRESA</div>
+    <div>
+      <div class="quote-title">COTIZACIÓN DE SERVICIO</div>
+      <div class="small">Diagnóstico y localización de posibles fugas de agua</div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div><label>N.° de cotización</label><input id="cotNumero" placeholder="COT-001"></div>
+    <div><label>Fecha</label><input id="cotFecha" type="date"></div>
+    <div><label>Cliente</label><input id="cotCliente"></div>
+    <div><label>Ubicación del servicio</label><input id="cotUbicacion"></div>
+  </div>
+
+  <div class="quote-box">
+    <b>Asunto:</b> Propuesta económica por servicio de detección de fugas.
+    <p id="cotIntro">Por medio de la presente, remitimos nuestra propuesta para la evaluación técnica del caso indicado.</p>
+  </div>
+
+  <div class="quote-box">
+    <b>Alcance del servicio</b>
+    <p id="cotAlcance"></p>
+  </div>
+
+  <div class="quote-box">
+    <b>Incluye</b>
+    <p id="cotIncluye"></p>
+  </div>
+
+  <div class="quote-box">
+    <b>No incluye / Condiciones</b>
+    <p id="cotNoIncluye"></p>
+  </div>
+
+  <div class="quote-total">
+    <div class="small" style="color:#dcebf0">INVERSIÓN PROPUESTA</div>
+    <div class="amount" id="cotTotal">S/ 0.00</div>
+  </div>
+
+  <div class="grid" style="margin-top:14px">
+    <div><label>Validez de la cotización</label><input id="cotValidez" placeholder="Ej. 7 días"></div>
+    <div><label>Forma de pago</label><input id="cotPago" placeholder="Ej. 50% adelanto / saldo contra servicio"></div>
+  </div>
+
+  <div style="margin-top:12px"><label>Observaciones comerciales</label><textarea id="cotObs" placeholder="Plazo, coordinación, acceso al inmueble u otras condiciones."></textarea></div>
+
+  <div class="quote-sign">
+    <div class="quote-sign-line"></div>
+    <b>Profesional / Empresa</b>
+    <div class="small">Firma y datos comerciales</div>
+  </div>
+</div>
+
+<div class="footer small">AF-07 – Metodología Aquaelite®. Herramienta comercial de apoyo. Los precios obtenidos son referenciales y dependen de los costos, alcance y criterio comercial del profesional.</div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const rd=(f,cb)=>{if(!f)return;const r=new FileReader();r.onload=e=>cb(e.target.result);r.readAsDataURL(f)};
+$('logoFile').addEventListener('change',function(){
+  rd(this.files[0],x=>{
+    $('logo').innerHTML='<img src="'+x+'">';
+    $('quoteLogo').innerHTML='<img src="'+x+'">';
+  });
+});
+function num(id){return parseFloat($(id).value)||0}
+function calcular(){
+  const ss=num('horasSup')*num('puSup');
+  const sa=num('horasApo')*num('puApo');
+  $('subSup').value=ss.toFixed(2);
+  $('subApo').value=sa.toFixed(2);
+  const base=ss+sa+num('movilidad')+num('equipo')+num('consumibles')+num('informe')+num('otros');
+  const factor=parseFloat($('complejidad').value)||1;
+  const sect=Math.max(1,num('sectores'));
+  const sectorFactor=1+Math.max(0,sect-1)*0.08;
+  const total=base*factor*sectorFactor;
+  const min=total*(1+num('margenMin')/100);
+  const com=total*(1+num('margenCom')/100);
+  $('costo').textContent='S/ '+total.toFixed(2);
+  $('pmin').textContent='S/ '+min.toFixed(2);
+  $('pcom').textContent='S/ '+com.toFixed(2);
+  if(!$('pfinal').value || parseFloat($('pfinal').value)===0) $('pfinal').value=com.toFixed(2);
+  actualizarCotizacion();
+}
+function servicioTexto(){
+  const m={
+    diag:'diagnóstico inicial de la posible fuga',
+    sector:'diagnóstico técnico con pruebas hidráulicas de descarte y sectorización',
+    local:'diagnóstico, descarte/sectorización y localización asistida de la zona probable de fuga',
+    full:'servicio integral de diagnóstico, localización, intervención y prueba hidráulica final'
+  };
+  return m[$('servicio').value];
+}
+function generarPropuesta(){
+  calcular();
+  const cli=$('cliente').value.trim()||'el cliente';
+  const ubi=$('ubicacion').value.trim();
+  const precio=parseFloat($('pfinal').value)||0;
+  $('texto').value=`Hola. Para ${cli}, proponemos realizar un ${servicioTexto()}. El objetivo es reducir técnicamente el área de investigación antes de realizar intervenciones innecesarias, correlacionando las evidencias obtenidas durante el servicio. ${ubi?'Ubicación: '+ubi+'. ':''}Inversión propuesta: S/ ${precio.toFixed(2)}. El alcance exacto se confirmará antes de iniciar.`;
+  actualizarCotizacion();
+}
+function actualizarCotizacion(){
+  $('cotCliente').value=$('cliente').value;
+  $('cotUbicacion').value=$('ubicacion').value;
+  $('cotAlcance').textContent='Se propone realizar un '+servicioTexto()+'. El servicio se desarrollará de acuerdo con las condiciones encontradas y el alcance previamente coordinado.';
+  $('cotIncluye').textContent=$('incluye').value || 'Evaluación técnica, registro del servicio y recomendaciones según el alcance contratado.';
+  $('cotNoIncluye').textContent=$('noincluye').value || 'Trabajos no contemplados expresamente en el alcance.';
+  $('cotTotal').textContent='S/ '+(parseFloat($('pfinal').value)||0).toFixed(2);
+}
+$('calc').addEventListener('click',calcular);
+$('proposal').addEventListener('click',generarPropuesta);
+$('pfinal').addEventListener('input',actualizarCotizacion);
+$('incluye').addEventListener('input',actualizarCotizacion);
+$('noincluye').addEventListener('input',actualizarCotizacion);
+$('print').addEventListener('click',function(){
+  actualizarCotizacion();
+  window.print();
+});
+$('clear').addEventListener('click',function(){
+  if(!confirm('¿Limpiar todos los campos?')) return;
+  document.querySelectorAll('input:not([type=file]),textarea').forEach(x=>x.value='');
+  document.querySelectorAll('select').forEach(x=>x.selectedIndex=0);
+  $('logo').innerHTML='LOGO DEL PROFESIONAL<br>O EMPRESA';
+  $('quoteLogo').innerHTML='LOGO DEL PROFESIONAL<br>O EMPRESA';
+  $('costo').textContent=$('pmin').textContent=$('pcom').textContent='S/ 0.00';
+  $('cotTotal').textContent='S/ 0.00';
+});
+actualizarCotizacion();
+</script>
+</body></html>
