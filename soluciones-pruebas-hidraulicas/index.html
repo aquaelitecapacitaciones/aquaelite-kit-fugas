@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Soluciones Aquaelite para implementar servicios de pruebas hidráulicas: Pruebas Digital PRO, Kit Profesional con presurizadora DSY-40 y compra del equipo por separado.">
+  <title>Pruebas hidráulicas profesionales | Aquaelite</title>
+  <style>
+    :root{
+      --navy:#061a2d;--navy-2:#0b2b47;--cyan:#18b9ee;--cyan-2:#54d8ff;
+      --ink:#10263a;--muted:#5e7384;--soft:#edf8fc;--line:#cce7f1;
+      --white:#fff;--green:#20b77a;--shadow:0 24px 70px rgba(2,25,44,.14)
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--ink);background:#f7fbfd;line-height:1.55}
+    a{color:inherit}
+    .wrap{width:min(1160px,calc(100% - 36px));margin:auto}
+    header{background:linear-gradient(135deg,#03131f 0%,#092d4a 60%,#05658b 100%);color:#fff;overflow:hidden;position:relative}
+    header:after{content:"";position:absolute;width:560px;height:560px;border-radius:50%;background:rgba(20,185,235,.13);right:-180px;top:-250px}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:19px 0;position:relative;z-index:2}
+    .logo{width:230px;max-width:52vw;display:block;filter:drop-shadow(0 2px 8px rgba(0,0,0,.2))}
+    .nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-weight:800;border-radius:12px;padding:13px 20px;transition:.2s}
+    .nav-cta{border:1px solid rgba(255,255,255,.34);background:rgba(255,255,255,.08)}
+    .nav-cta:hover{background:rgba(255,255,255,.16)}
+    .hero{display:grid;grid-template-columns:1.02fr .98fr;gap:48px;align-items:center;padding:48px 0 72px;position:relative;z-index:1}
+    .eyebrow{font-weight:900;letter-spacing:.11em;color:var(--cyan-2);font-size:.82rem}
+    .hero h1{font-size:clamp(2.35rem,5vw,4.65rem);line-height:1.02;margin:14px 0 18px;letter-spacing:-.045em}
+    .hero p{font-size:1.16rem;color:#d5eaf5;max-width:610px;margin:0 0 26px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px}
+    .hero .btn{margin:0;background:linear-gradient(90deg,#0aa3d3,#17c3ec)}
+    .hero .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,.4)}
+    .hero-points{display:flex;flex-wrap:wrap;gap:10px}
+    .pill{border:1px solid rgba(85,217,255,.35);background:rgba(10,61,91,.7);padding:8px 12px;border-radius:999px;font-size:.91rem;color:#e8f8ff}
+    .hero-media{position:relative}
+    .hero-img{width:100%;display:block;border-radius:24px;box-shadow:0 32px 75px rgba(0,0,0,.42);border:1px solid rgba(255,255,255,.14)}
+    .hero-badge{position:absolute;right:16px;bottom:16px;background:rgba(3,19,31,.92);border:1px solid rgba(84,216,255,.45);border-radius:14px;padding:11px 15px;font-weight:800;color:#fff;box-shadow:0 10px 25px rgba(0,0,0,.25)}
+    .proof{margin-top:-27px;position:relative;z-index:3}
+    .proof-inner{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(3,1fr);overflow:hidden}
+    .proof-item{padding:20px 24px;display:flex;gap:12px;align-items:center}
+    .proof-item+.proof-item{border-left:1px solid var(--line)}
+    .proof-icon{width:42px;height:42px;border-radius:12px;background:var(--soft);color:#0588b4;display:grid;place-items:center;font-size:1.2rem;font-weight:900;flex:0 0 auto}
+    .proof-item b{display:block;color:var(--navy);font-size:.98rem}.proof-item span{font-size:.87rem;color:var(--muted)}
+    main{padding:70px 0 0}
+    .intro{text-align:center;max-width:850px;margin:0 auto 34px}
+    .intro h2{font-size:clamp(2rem,4vw,3.1rem);line-height:1.08;margin:0 0 12px;letter-spacing:-.03em}
+    .intro p{font-size:1.05rem;color:var(--muted);margin:0}
+    .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;align-items:stretch}
+    .card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:31px;box-shadow:var(--shadow);display:flex;flex-direction:column;position:relative;overflow:hidden}
+    .card.featured{border:2px solid var(--cyan);background:linear-gradient(180deg,#fff 0%,#f1fbff 100%)}
+    .tag{display:inline-flex;align-self:flex-start;background:var(--soft);color:#08749d;border-radius:999px;padding:7px 11px;font-weight:900;font-size:.78rem;letter-spacing:.06em}
+    .featured .tag{background:var(--navy);color:#fff}
+    .card h3{font-size:2rem;line-height:1.08;margin:18px 0 8px;letter-spacing:-.03em}
+    .card .lead{color:var(--muted);min-height:82px;margin:0 0 18px}
+    .price{font-size:2.75rem;line-height:1;font-weight:950;color:var(--navy);margin:8px 0}
+    .tax{font-size:.92rem;color:var(--muted);font-weight:700}
+    .list{list-style:none;padding:0;margin:26px 0;display:grid;gap:12px}
+    .list li{padding-left:28px;position:relative}
+    .list li:before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:950}
+    .note{background:var(--soft);border-left:4px solid var(--cyan);padding:14px 15px;border-radius:8px;color:#284a60;font-size:.94rem;margin-top:auto}
+    .btn{margin-top:22px;background:var(--navy);color:#fff;text-align:center}
+    .featured .btn{background:linear-gradient(90deg,#0587b6,#10bde9)}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(8,115,155,.22)}
+    .visual-story{margin-top:58px;background:#fff;border:1px solid var(--line);border-radius:28px;overflow:hidden;display:grid;grid-template-columns:.78fr 1.22fr;box-shadow:var(--shadow)}
+    .visual-story img{width:100%;height:100%;max-height:720px;object-fit:cover;display:block}
+    .visual-copy{padding:42px;align-self:center}
+    .visual-copy .eyebrow{color:#08749d}
+    .visual-copy h2{font-size:clamp(2rem,4vw,3.1rem);line-height:1.06;margin:13px 0 14px;letter-spacing:-.035em;color:var(--navy)}
+    .visual-copy>p{color:var(--muted);margin:0 0 24px;font-size:1.04rem}
+    .visual-steps{display:grid;gap:13px}
+    .visual-step{display:grid;grid-template-columns:42px 1fr;gap:13px;align-items:start;border-top:1px solid var(--line);padding-top:13px}
+    .visual-step:first-child{border-top:0;padding-top:0}
+    .visual-step b{width:38px;height:38px;border-radius:11px;background:var(--navy);color:#fff;display:grid;place-items:center}
+    .visual-step strong{display:block;color:var(--navy);font-weight:800}.visual-step span{color:var(--muted);font-size:.92rem}
+    .equipment{margin-top:58px;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:28px;overflow:hidden;display:grid;grid-template-columns:.95fr 1.05fr;box-shadow:var(--shadow)}
+    .equipment-media{background:#06192b;min-height:100%;display:flex;align-items:stretch}
+    .equipment-media img{width:100%;height:100%;object-fit:cover;display:block}
+    .equipment-copy{padding:44px}
+    .equipment-copy .tag{background:var(--soft);color:#08749d;border:0}
+    .equipment-copy h2{font-size:clamp(2rem,4vw,3.25rem);line-height:1.05;margin:18px 0 10px;letter-spacing:-.04em}
+    .equipment-copy>p{color:var(--muted);margin:0 0 18px}
+    .equipment-copy .price{color:var(--navy);font-size:3rem}
+    .equipment-copy .tax{color:var(--muted)}
+    .spec-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:26px 0}
+    .spec{border:1px solid var(--line);background:var(--soft);border-radius:14px;padding:14px}
+    .spec b{display:block;color:var(--navy)}.spec span{color:var(--muted);font-size:.9rem}
+    .doc-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .doc-link{display:inline-flex;align-items:center;text-decoration:none;border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px 13px;font-weight:800;color:#08749d;font-size:.9rem}
+    .equipment-copy .btn{background:linear-gradient(90deg,#0a9fd0,#17c3ec);margin-top:24px;width:100%}
+    .cert-note{font-size:.8rem!important;color:var(--muted)!important;margin-top:13px!important}
+    .comparison{margin-top:62px}
+    .comparison h2{text-align:center;font-size:clamp(1.9rem,4vw,2.8rem);margin:0 0 24px}
+    .table-wrap{overflow-x:auto;border-radius:20px;border:1px solid var(--line);box-shadow:0 14px 40px rgba(2,25,44,.08)}
+    table{border-collapse:collapse;width:100%;min-width:760px;background:#fff}
+    th,td{padding:16px 18px;text-align:left;border-bottom:1px solid var(--line)}
+    th{background:#eaf7fc;color:var(--navy);font-size:.93rem}
+    td:first-child{font-weight:800;color:var(--navy)}
+    tr:last-child td{border-bottom:0}.yes{color:#138557;font-weight:800}.no{color:#718391}.optional{color:#08749d;font-weight:800}
+    .faq{margin-top:62px;display:grid;grid-template-columns:.75fr 1.25fr;gap:36px;align-items:start}
+    .faq h2{font-size:clamp(2rem,4vw,3rem);line-height:1.05;margin:0 0 10px}.faq>div>p{color:var(--muted)}
+    details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:12px}
+    summary{cursor:pointer;font-weight:800;color:var(--navy)}
+    details p{color:var(--muted);margin:12px 0 0}
+    .final-cta{margin-top:62px;text-align:center;background:linear-gradient(135deg,#08304d,#075d80);color:#fff;border-radius:24px;padding:42px 28px}
+    .final-cta h2{font-size:clamp(2rem,4vw,3rem);line-height:1.08;margin:0 0 10px}.final-cta p{color:#cfe6f1;margin:0 auto;max-width:700px}.final-cta .btn{background:#fff;color:var(--navy);margin-top:22px}
+    footer{background:#03131f;color:#afc8d7;padding:30px 0;margin-top:64px}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:.92rem}.footer-inner b{color:#fff}
+    @media(max-width:900px){.hero,.visual-story,.equipment,.faq{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.hero{padding-top:34px}.hero-media{max-width:680px}.card .lead{min-height:0}.proof-inner{grid-template-columns:1fr}.proof-item+.proof-item{border-left:0;border-top:1px solid var(--line)}.visual-story img{max-height:680px;object-position:center 32%}.visual-copy{padding:32px}.equipment-media img{max-height:720px;object-fit:contain}.equipment-copy{padding:32px}.faq{gap:16px}}
+    @media(max-width:560px){.wrap{width:min(100% - 24px,1160px)}nav{align-items:flex-start}.nav-cta{font-size:.8rem;padding:10px 12px}.hero{gap:28px;padding-bottom:52px}.hero-actions{display:grid}.hero-actions .btn{width:100%}.hero-badge{font-size:.82rem}.card{padding:24px}.price{font-size:2.35rem}.equipment-copy{padding:25px}.spec-grid{grid-template-columns:1fr}.doc-actions{display:grid}.doc-link{justify-content:center}.footer-inner{display:block}.footer-inner div+div{margin-top:8px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav>
+        <img class="logo" src="assets/logo-aquaelite.png" alt="Aquaelite, Soluciones Integrales en Agua">
+        <a class="nav-cta" href="https://wa.me/51970683322?text=Hola%20Aquaelite%2C%20quiero%20informaci%C3%B3n%20sobre%20las%20soluciones%20de%20pruebas%20hidr%C3%A1ulicas.">Consultar por WhatsApp</a>
+      </nav>
+
+      <section class="hero">
+        <div>
+          <div class="eyebrow">PRUEBAS HIDRÁULICAS · SOLUCIONES PROFESIONALES</div>
+          <h1>Haz pruebas con método, documentación y respaldo.</h1>
+          <p>Empieza con las herramientas digitales Aquaelite o implementa tu servicio completo con la presurizadora profesional DSY‑40.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#opciones">Ver las dos opciones</a>
+            <a class="btn secondary" href="#solo-equipo">Comprar solo el equipo</a>
+          </div>
+          <div class="hero-points">
+            <span class="pill">Instalaciones sanitarias</span>
+            <span class="pill">Sistemas contra incendios</span>
+            <span class="pill">Informes y cotizaciones</span>
+          </div>
+        </div>
+        <div class="hero-media">
+          <img class="hero-img" src="assets/prueba-hidraulica-pci-aquaelite.webp" alt="Técnico Aquaelite ejecutando una prueba hidráulica con equipo presurizador">
+          <div class="hero-badge">Pruebas sanitarias y sistemas contra incendios</div>
+        </div>
+      </section>
+    </div>
+  </header>
+
+  <section class="proof wrap" aria-label="Alcances principales">
+    <div class="proof-inner">
+      <div class="proof-item"><div class="proof-icon">01</div><div><b>Prueba con criterio</b><span>Protocolos y secuencia de trabajo.</span></div></div>
+      <div class="proof-item"><div class="proof-icon">02</div><div><b>Entrega profesional</b><span>Registros, informes y cotizaciones.</span></div></div>
+      <div class="proof-item"><div class="proof-icon">03</div><div><b>Acompañamiento real</b><span>Sesiones durante los 6 meses.</span></div></div>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <section class="intro" id="opciones">
+      <h2>Dos formas de implementar el servicio</h2>
+      <p>Elige el acceso digital para organizar y profesionalizar tu trabajo, o incorpora desde el inicio el equipo DSY‑40 con capacitación y acompañamiento.</p>
+    </section>
+
+    <section class="cards" aria-label="Planes de pruebas hidráulicas">
+      <article class="card">
+        <span class="tag">ACCESO DIGITAL</span>
+        <h3>Pruebas Digital PRO</h3>
+        <p class="lead"><b>Incluye las herramientas profesionales Aquaelite del Kit de Fugas y Pruebas y Aquaelite PRO</b>, para estructurar tu servicio sin invertir todavía en equipos especializados.</p>
+        <div class="price">S/379.90</div>
+        <div class="tax">Pago único · acceso digital por 6 meses · renovable por 1 año</div>
+        <ul class="list">
+          <li>Herramientas digitales de diagnóstico, descarte y sectorización.</li>
+          <li>Pruebas hidráulicas de instalaciones sanitarias y de sistemas contra incendios.</li>
+          <li>Registro de hallazgos y evidencia fotográfica.</li>
+          <li>Generación de informes profesionales y cotizaciones.</li>
+          <li>Protocolos, guías gráficas y material de apoyo.</li>
+          <li>Dos (02) sesiones online grupales de capacitación al mes durante los 6 meses de acceso.</li>
+          <li>Actualizaciones del Pack de Fugas y Pruebas durante la vigencia.</li>
+        </ul>
+        <div class="note"><b>Acceso:</b> 6 meses, con posibilidad de renovación por 1 año. Los archivos descargables entregados permanecen como material de consulta.</div>
+        <a class="btn" href="https://wa.me/51970683322?text=Hola%20Aquaelite%2C%20quiero%20adquirir%20Pruebas%20Digital%20PRO%20por%20S%2F379.90.">Quiero Pruebas Digital PRO</a>
+      </article>
+
+      <article class="card featured">
+        <span class="tag">SOLUCIÓN COMPLETA</span>
+        <h3>Kit Profesional Aquaelite</h3>
+        <p class="lead">Presurizadora profesional DSY‑40, herramientas digitales y acompañamiento para implementar el servicio profesional.</p>
+        <div class="price">S/1,699.00</div>
+        <div class="tax">+ IGV</div>
+        <ul class="list">
+          <li>Presurizadora profesional DSY‑40.</li>
+          <li>Herramientas digitales Aquaelite del Kit de Fugas y Pruebas y Aquaelite PRO por 6 meses, renovables por 1 año.</li>
+          <li>Protocolos, metodología y documentación profesional editables.</li>
+          <li>Capacitación para el uso del equipo y del sistema.</li>
+          <li>Dos (02) sesiones online grupales de capacitación al mes durante los 6 meses de acceso.</li>
+          <li>Comunidad privada y renovación digital disponible por 1 año.</li>
+        </ul>
+        <div class="note"><b>Importante:</b> el sensor Bosch Professional D‑tect 200 C no está incluido. Se comercializa por separado y puede complementar la evaluación de fugas ocultas.</div>
+        <a class="btn" href="https://wa.me/51970683322?text=Hola%20Aquaelite%2C%20quiero%20adquirir%20el%20Kit%20Profesional%20de%20Pruebas%20Hidr%C3%A1ulicas%20por%20S%2F1%2C699.00%20m%C3%A1s%20IGV.">Quiero el Kit Profesional</a>
+      </article>
+    </section>
+
+    <section class="visual-story" aria-label="Metodología y acompañamiento Aquaelite">
+      <img src="assets/metodo-capacitacion-aquaelite.webp" alt="Proceso Aquaelite: ejecución de pruebas, revisión técnica, capacitación online y sesiones grupales">
+      <div class="visual-copy">
+        <div class="eyebrow">MÉTODO AQUAELITE</div>
+        <h2>No es solo presurizar: aprende a evaluar, registrar y sustentar.</h2>
+        <p>Las herramientas y sesiones siguen una secuencia práctica para ayudarte a convertir la prueba en un servicio profesional.</p>
+        <div class="visual-steps">
+          <div class="visual-step"><b>1</b><div><strong>Preparar y sectorizar</strong><span>Define el tramo, verifica condiciones y organiza la prueba antes de presurizar.</span></div></div>
+          <div class="visual-step"><b>2</b><div><strong>Ejecutar y registrar</strong><span>Controla la presión, reúne evidencias y documenta cada hallazgo.</span></div></div>
+          <div class="visual-step"><b>3</b><div><strong>Informar y cotizar</strong><span>Entrega resultados comprensibles y presenta una propuesta profesional.</span></div></div>
+          <div class="visual-step"><b>4</b><div><strong>Revisar en sesiones grupales</strong><span>Resuelve dudas y mejora la aplicación con dos sesiones online grupales al mes.</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="equipment" id="solo-equipo">
+      <div class="equipment-media">
+        <img src="assets/dsy40.jpg" alt="Equipo eléctrico Aquaelite DSY-40 para pruebas hidráulicas">
+      </div>
+      <div class="equipment-copy">
+        <span class="tag">COMPRA DIRECTA</span>
+        <h2>Solo equipo DSY‑40</h2>
+        <p>Para quien ya cuenta con metodología y desea incorporar una presurizadora eléctrica para pruebas hidráulicas profesionales.</p>
+        <div class="price">S/950.00</div>
+        <div class="tax">IGV incluido</div>
+        <div class="spec-grid">
+          <div class="spec"><b>Equipo eléctrico</b><span>Operación práctica en campo.</span></div>
+          <div class="spec"><b>Rango comercial</b><span>Trabajo de 150 PSI a 300 PSI.</span></div>
+          <div class="spec"><b>Uso profesional</b><span>Instalaciones sanitarias y redes.</span></div>
+          <div class="spec"><b>Respaldo Aquaelite</b><span>Garantía y soporte del equipo.</span></div>
+        </div>
+        <div class="doc-actions">
+          <a class="doc-link" href="assets/ficha-tecnica-dsy-25-40.pdf" target="_blank" rel="noopener">Ver ficha técnica DSY‑25 / DSY‑40</a>
+          <a class="doc-link" href="assets/certificado-iso9001-fabricante.pdf" target="_blank" rel="noopener">Ver certificado ISO 9001</a>
+        </div>
+        <p class="cert-note">El certificado ISO 9001 corresponde al sistema de gestión de calidad del fabricante; no constituye una certificación individual del equipo DSY‑40.</p>
+        <a class="btn" href="https://wa.me/51970683322?text=Hola%20Aquaelite%2C%20quiero%20adquirir%20solo%20la%20presurizadora%20DSY-40%20por%20S%2F950.00%20con%20IGV%20incluido.">Comprar solo la DSY‑40</a>
+      </div>
+    </section>
+
+    <section class="comparison" aria-label="Comparación de opciones">
+      <h2>Compara antes de elegir</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Incluye</th><th>Pruebas Digital PRO</th><th>Kit Profesional</th><th>Solo DSY‑40</th></tr></thead>
+          <tbody>
+            <tr><td>Herramientas digitales</td><td class="yes">Sí · 6 meses</td><td class="yes">Sí · 6 meses</td><td class="no">No</td></tr>
+            <tr><td>Presurizadora DSY‑40</td><td class="no">No</td><td class="yes">Sí</td><td class="yes">Sí</td></tr>
+            <tr><td>Protocolos y documentación</td><td class="yes">Sí</td><td class="yes">Sí · editables</td><td class="no">No</td></tr>
+            <tr><td>Sesiones mensuales</td><td class="yes">02 grupales</td><td class="yes">02 grupales</td><td class="no">No</td></tr>
+            <tr><td>Renovación digital</td><td class="yes">Por 1 año</td><td class="yes">Por 1 año</td><td class="no">No aplica</td></tr>
+            <tr><td>Bosch D‑tect 200 C</td><td class="optional">Opcional</td><td class="optional">Opcional</td><td class="optional">Opcional</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="faq">
+      <div><h2>Preguntas claras antes de comprar</h2><p>Revisa el alcance de cada opción y elige según el punto en el que se encuentra tu servicio.</p></div>
+      <div>
+        <details open><summary>¿El pago de Pruebas Digital PRO es mensual?</summary><p>No. El precio de S/379.90 es un pago único por 6 meses de acceso digital.</p></details>
+        <details><summary>¿Puedo renovar el acceso?</summary><p>Sí. Pruebas Digital PRO y el Kit Profesional permiten renovar el acceso digital por 1 año.</p></details>
+        <details><summary>¿Los archivos descargados se pierden al vencer el acceso?</summary><p>No. Los archivos descargables entregados permanecen contigo como material de consulta.</p></details>
+        <details><summary>¿El Kit Profesional incluye el Bosch D‑tect 200 C?</summary><p>No. Este kit incluye la presurizadora DSY‑40. El Bosch D‑tect 200 C se comercializa por separado como complemento para la evaluación de fugas ocultas.</p></details>
+        <details><summary>¿Puedo comprar únicamente la presurizadora?</summary><p>Sí. La DSY‑40 está disponible por S/950.00 con IGV incluido. Esta compra no incluye el acceso digital ni las sesiones online grupales.</p></details>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <h2>Elige la opción que puedas aplicar desde hoy</h2>
+      <p>Escríbenos indicando si deseas el acceso digital, el kit completo o solo la presurizadora DSY‑40.</p>
+      <a class="btn" href="https://wa.me/51970683322?text=Hola%20Aquaelite%2C%20quiero%20elegir%20una%20opci%C3%B3n%20para%20pruebas%20hidr%C3%A1ulicas.">Hablar con Aquaelite por WhatsApp</a>
+    </section>
+  </main>
+
+  <footer><div class="wrap footer-inner"><div><b>AQUAELITE®</b> · Soluciones Integrales en Agua</div><div>Efire Ingeniería · RUC 20609284651 · WhatsApp 970 683 322</div></div></footer>
+</body>
+</html>
