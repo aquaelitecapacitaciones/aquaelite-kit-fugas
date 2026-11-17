@@ -39,7 +39,7 @@ label{font-size:12px;font-weight:700;color:#41515b;display:block;margin-bottom:4
 <div class="toolbar">
  <label class="filebtn ghost">Subir logo <input id="logoFile" type="file" accept="image/*" hidden></label>
  <button class="ghost" type="button" id="btnClear">Limpiar</button>
- <button class="secondary" type="button" id="btnEvaluate">Evaluar diagnóstico</button>
+ <button class="secondary" type="button" id="btnEvaluate">Ver siguiente paso</button>
  <button class="primary" type="button" id="btnPrint">Imprimir / Guardar PDF</button>
 </div>
 <div class="wrap"><div class="sheet">
@@ -51,7 +51,7 @@ label{font-size:12px;font-weight:700;color:#41515b;display:block;margin-bottom:4
   </div>
  </div>
 
- <div class="intro"><strong>Primero entiende el problema. Después decide qué prueba realizar.</strong><p>Esta ficha reúne lo que cuenta el cliente y lo que observas en la visita. No necesitas conocer todavía el punto exacto de la fuga. Completa los datos, añade fotografías y pulsa «Evaluar diagnóstico» para obtener una ruta sugerida.</p></div>
+ <div class="intro"><strong>Primero entiende el problema. Después decide qué prueba realizar.</strong><p>Esta ficha reúne lo que cuenta el cliente y lo que observas en la visita. No necesitas conocer todavía el punto exacto de la fuga. Completa los datos, añade fotografías y pulsa «Ver siguiente paso» para orientarte sobre qué revisar después.</p></div>
  <h2>A. ¿Quién solicita el servicio?</h2><div class="stepnote">Anota los datos del lugar y de la persona responsable de la visita.</div>
  <div class="grid">
   <div><label>Cliente / Empresa</label><input id="cliente" type="text"></div>
@@ -106,11 +106,11 @@ label{font-size:12px;font-weight:700;color:#41515b;display:block;margin-bottom:4
 
  <h2>F. ¿Qué corresponde hacer después?</h2><div class="stepnote">El resultado es una orientación inicial, no confirma la existencia ni la ubicación exacta de una fuga.</div>
  <div class="decision">
-  <div class="route"><b>R1 – Inspección localizada</b><br><span class="small">Zona razonablemente delimitada. Continuar con AF-04 cuando corresponda.</span></div>
+  <div class="route"><b>R1 – Revisar zona delimitada</b><br><span class="small">Zona razonablemente delimitada. Continuar con AF-04 cuando corresponda.</span></div>
   <div class="route"><b>R2 – Descarte / sectorización</b><br><span class="small">Múltiples ambientes, baterías, pisos o ramales. Evaluar AF-03 cuando técnicamente corresponda.</span></div>
   <div class="route"><b>R3 – Evaluación complementaria</b><br><span class="small">La información disponible todavía no permite definir una ruta suficiente.</span></div>
  </div>
- <div class="result"><div class="small" style="color:#dcebf0">RESULTADO SUGERIDO</div><strong id="resultado">Presione “Evaluar diagnóstico”</strong><div id="detalle" style="margin-top:5px;font-size:12px"></div></div>
+ <div class="note">La recomendación se basa en los datos que registraste, no sustituye la evaluación técnica ni confirma que exista una fuga.</div><div class="result"><div class="small" style="color:#dcebf0">RESULTADO SUGERIDO</div><strong id="resultado">Pulsa «Ver siguiente paso»</strong><div id="detalle" style="margin-top:5px;font-size:12px"></div></div>
 
  <div class="next"><strong>Recorrido del Pack Aquaelite®</strong><p>Si necesitas comparar sectores, continúa con <a href="../af-03/" target="_blank" rel="noopener">AF-03</a>. Si ya tienes una zona razonablemente delimitada y corresponde inspeccionar elementos ocultos, utiliza <a href="../af-04/" target="_blank" rel="noopener">AF-04</a>. Después de una intervención, registra la comprobación en <a href="../af-06/" target="_blank" rel="noopener">AF-06</a>. Para preparar el presupuesto, utiliza <a href="../af-07/" target="_blank" rel="noopener">AF-07</a>.</p></div>
  <h2>G. Conclusión preliminar</h2>
@@ -135,12 +135,12 @@ function showPhoto(inp,id){const f=inp.files[0];if(!f)return;const r=new FileRea
 function evaluate(){
  const a=document.getElementById('ambientes').value,b=document.getElementById('baterias').value,r=document.getElementById('ramales').value,e=document.getElementById('evidencia').value;
  let title,detail;
- if(a==='multi'||a==='dos'||b==='si'||r==='si'){title='R2 – Prueba de descarte / sectorización';detail='Existen múltiples ambientes, baterías, pisos o ramales. Evaluar sectorización y AF-03 cuando las condiciones de la instalación lo permitan.'}
- else if(a==='uno' && e==='si'){title='R1 – Inspección localizada';detail='Existe una zona delimitada con evidencia visible. Continuar la evaluación localizada y seleccionar el método apropiado.'}
+ if(a==='multi'||a==='dos'||b==='si'||r==='si'){title='R2 – Evaluar prueba por sectores';detail='Existen múltiples ambientes, baterías, pisos o ramales. Evaluar sectorización y AF-03 cuando las condiciones de la instalación lo permitan.'}
+ else if(a==='uno' && e==='si'){title='R1 – Revisar zona delimitada';detail='La señal está localizada, pero no confirma una fuga. Revisa posibles causas externas y decide si corresponde inspeccionar con AF-04.'}
  else {title='R3 – Evaluación complementaria';detail='La información registrada todavía no permite establecer una ruta suficiente. Ampliar verificaciones antes de intervenir.'}
  document.getElementById('resultado').textContent=title;document.getElementById('detalle').textContent=detail;
 }
-function clearAll(){if(!confirm('¿Limpiar todos los campos del formulario?'))return;document.querySelectorAll('input:not([type=file]),textarea').forEach(x=>{if(x.type==='checkbox'||x.type==='radio')x.checked=false;else x.value=''});document.querySelectorAll('select').forEach(x=>x.selectedIndex=0);document.querySelectorAll('input[type=file]').forEach(x=>x.value='');document.getElementById('resultado').textContent='Presione “Evaluar diagnóstico”';document.getElementById('detalle').textContent='';document.getElementById('logoBox').innerHTML='LOGO DEL PROFESIONAL<br>O EMPRESA';document.getElementById('p1').textContent='Foto general / manifestación';document.getElementById('p2').textContent='Foto complementaria'}
+function clearAll(){if(!confirm('¿Limpiar todos los campos del formulario?'))return;document.querySelectorAll('input:not([type=file]),textarea').forEach(x=>{if(x.type==='checkbox'||x.type==='radio')x.checked=false;else x.value=''});document.querySelectorAll('select').forEach(x=>x.selectedIndex=0);document.querySelectorAll('input[type=file]').forEach(x=>x.value='');document.getElementById('resultado').textContent='Pulsa «Ver siguiente paso»';document.getElementById('detalle').textContent='';document.getElementById('logoBox').innerHTML='LOGO DEL PROFESIONAL<br>O EMPRESA';document.getElementById('p1').textContent='Foto general / manifestación';document.getElementById('p2').textContent='Foto complementaria'}
 
 document.addEventListener('DOMContentLoaded', function(){
   const evalBtn=document.getElementById('btnEvaluate');
