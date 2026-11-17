@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AF-02 | AquaCheck Diagnóstico Inicial</title>
+<title>AF-02 | AquaCheck Registro del cliente y del problema</title>
 <style>
 :root{--navy:#0b2239;--blue:#087ea4;--cyan:#19a9c7;--light:#eef6f8;--line:#d7e5ea;--text:#17212b;--muted:#65737d;--warn:#fff4df;--red:#b94242;--green:#24765a}
 *{box-sizing:border-box} body{margin:0;background:#f4f7f8;color:var(--text);font-family:Arial,Helvetica,sans-serif}
@@ -32,25 +32,27 @@ label{font-size:12px;font-weight:700;color:#41515b;display:block;margin-bottom:4
  .signature-block{break-inside:avoid!important;page-break-inside:avoid!important;margin-top:28px}
  .result{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
+.intro{background:linear-gradient(120deg,#0b2239,#164b72);color:#fff;border-radius:12px;padding:20px;margin:22px 0}.intro p{margin:8px 0 0;line-height:1.55;font-size:14px}.intro strong{color:#b9efff}.stepnote{background:#eef6f8;border-left:4px solid #087ea4;padding:10px 13px;margin:8px 0 14px;border-radius:0 8px 8px 0;font-size:13px;line-height:1.5}.next{background:#eaf4f8;padding:15px;border-radius:10px;margin-top:16px}.next a{color:#075c81;font-weight:bold}.route{background:#fafcfd}.route b{display:block;margin-bottom:5px}@media print{.intro{background:#eef6f8!important;color:#0b2239!important}.intro strong{color:#0b2239!important}.stepnote{background:#fff!important}.next a{color:#0b2239}}
 </style>
 </head>
 <body>
 <div class="toolbar">
  <label class="filebtn ghost">Subir logo <input id="logoFile" type="file" accept="image/*" hidden></label>
  <button class="ghost" type="button" id="btnClear">Limpiar</button>
- <button class="secondary" type="button" id="btnEvaluate">Evaluar diagnóstico</button>
+ <button class="secondary" type="button" id="btnEvaluate">Ver siguiente paso</button>
  <button class="primary" type="button" id="btnPrint">Imprimir / Guardar PDF</button>
 </div>
 <div class="wrap"><div class="sheet">
  <div class="head">
   <div class="logo" id="logoBox">LOGO DEL PROFESIONAL<br>O EMPRESA</div>
-  <div><h1>AquaCheck – Diagnóstico Inicial de Posible Fuga</h1>
-   <div class="sub">Herramienta de campo para orientar la ruta de diagnóstico antes de intervenir.</div>
+  <div><h1>AquaCheck – Registro del cliente y del problema</h1>
+   <div class="sub">Primera visita: registra el problema y decide qué revisar después.</div>
    <span class="code">AF-02 | Pack Profesional Aquaelite – Detección de Fugas</span>
   </div>
  </div>
 
- <h2>A. Datos del servicio</h2>
+ <div class="intro"><strong>Primero entiende el problema. Después decide qué prueba realizar.</strong><p>Esta ficha reúne lo que cuenta el cliente y lo que observas en la visita. No necesitas conocer todavía el punto exacto de la fuga. Completa los datos, añade fotografías y pulsa «Ver siguiente paso» para orientarte sobre qué revisar después.</p></div>
+ <h2>A. ¿Quién solicita el servicio?</h2><div class="stepnote">Anota los datos del lugar y de la persona responsable de la visita.</div>
  <div class="grid">
   <div><label>Cliente / Empresa</label><input id="cliente" type="text"></div>
   <div><label>Proyecto / Inmueble</label><input id="proyecto" type="text"></div>
@@ -62,7 +64,7 @@ label{font-size:12px;font-weight:700;color:#41515b;display:block;margin-bottom:4
   <div><label>Tipo de edificación</label><select><option>Vivienda</option><option>Multifamiliar</option><option>Oficinas</option><option>Comercial</option><option>Industrial</option><option>Hotel</option><option>Otro</option></select></div>
  </div>
 
- <h2>B. Motivo de la inspección</h2>
+ <h2>B. ¿Qué problema presenta la instalación?</h2><div class="stepnote">Marca lo que informa el cliente o lo que observaste. Puedes seleccionar varias opciones.</div>
  <div class="checks">
   <label class="check"><input type="checkbox">Consumo de agua inusual</label>
   <label class="check"><input type="checkbox" id="medidorSint">Medidor registra consumo sin uso aparente</label>
@@ -75,7 +77,7 @@ label{font-size:12px;font-weight:700;color:#41515b;display:block;margin-bottom:4
  </div>
  <div style="margin-top:10px"><label>Descripción / antecedente reportado</label><textarea></textarea></div>
 
- <h2>C. Verificación inicial</h2>
+ <h2>C. ¿Qué pudiste comprobar?</h2><div class="stepnote">Registra solo lo que verificaste. Si no pudiste revisar algo, déjalo indicado como pendiente o no verificado.</div>
  <div class="grid">
   <div><label>¿Existe evidencia visible de agua o humedad?</label><select id="evidencia"><option value="">Seleccione</option><option value="si">Sí</option><option value="no">No</option></select></div>
   <div><label>¿Medidor registra consumo con puntos evaluados cerrados?</label><select><option>No verificado</option><option>Sí</option><option>No</option><option>No aplica</option></select></div>
@@ -85,7 +87,7 @@ label{font-size:12px;font-weight:700;color:#41515b;display:block;margin-bottom:4
   <div><label>Zona donde aparece la manifestación</label><input type="text"></div>
  </div>
 
- <h2>D. Dimensión del problema</h2>
+ <h2>D. ¿En qué parte ocurre?</h2><div class="stepnote">Identifica si el problema parece limitado a un ambiente o si es necesario revisar varios baños, pisos o ramales.</div>
  <div class="grid">
   <div><label>Ambientes potencialmente involucrados</label><select id="ambientes"><option value="uno">Un ambiente claramente identificado</option><option value="dos">2–3 ambientes</option><option value="multi">Múltiples ambientes</option><option value="nd">No determinado</option></select></div>
   <div><label>¿Existen varias baterías de baños?</label><select id="baterias"><option value="no">No</option><option value="si">Sí</option></select></div>
@@ -95,21 +97,22 @@ label{font-size:12px;font-weight:700;color:#41515b;display:block;margin-bottom:4
  <div class="note"><b>Importante:</b> una manifestación de humedad o una lectura aislada no confirma por sí sola el punto exacto de una fuga. El objetivo de AF-02 es orientar la siguiente etapa del diagnóstico.</div>
 
  <section class="evidence-section">
- <h2>E. Evidencias fotográficas iniciales</h2>
+ <h2>E. Fotografías del problema</h2><div class="stepnote">Agrega una vista general y un acercamiento de la zona. Describe qué muestra cada fotografía.</div>
  <div class="photo-grid">
   <div><label class="filebtn ghost no-print">Agregar foto 1 <input type="file" accept="image/*" hidden onchange="showPhoto(this,'p1')"></label><div class="photo" id="p1">Foto general / manifestación</div><input type="text" placeholder="Descripción de la foto"></div>
   <div><label class="filebtn ghost no-print">Agregar foto 2 <input type="file" accept="image/*" hidden onchange="showPhoto(this,'p2')"></label><div class="photo" id="p2">Foto complementaria</div><input type="text" placeholder="Descripción de la foto"></div>
  </div>
  </section>
 
- <h2>F. Decisión AquaCheck</h2>
+ <h2>F. ¿Qué corresponde hacer después?</h2><div class="stepnote">El resultado es una orientación inicial, no confirma la existencia ni la ubicación exacta de una fuga.</div>
  <div class="decision">
-  <div class="route"><b>R1 – Inspección localizada</b><br><span class="small">Zona razonablemente delimitada. Continuar con AF-04 cuando corresponda.</span></div>
+  <div class="route"><b>R1 – Revisar zona delimitada</b><br><span class="small">Zona razonablemente delimitada. Continuar con AF-04 cuando corresponda.</span></div>
   <div class="route"><b>R2 – Descarte / sectorización</b><br><span class="small">Múltiples ambientes, baterías, pisos o ramales. Evaluar AF-03 cuando técnicamente corresponda.</span></div>
   <div class="route"><b>R3 – Evaluación complementaria</b><br><span class="small">La información disponible todavía no permite definir una ruta suficiente.</span></div>
  </div>
- <div class="result"><div class="small" style="color:#dcebf0">RESULTADO SUGERIDO</div><strong id="resultado">Presione “Evaluar diagnóstico”</strong><div id="detalle" style="margin-top:5px;font-size:12px"></div></div>
+ <div class="note">La recomendación se basa en los datos que registraste, no sustituye la evaluación técnica ni confirma que exista una fuga.</div><div class="result"><div class="small" style="color:#dcebf0">RESULTADO SUGERIDO</div><strong id="resultado">Pulsa «Ver siguiente paso»</strong><div id="detalle" style="margin-top:5px;font-size:12px"></div></div>
 
+ <div class="next"><strong>Recorrido del Pack Aquaelite®</strong><p>Si necesitas comparar sectores, continúa con <a href="../af-03/" target="_blank" rel="noopener">AF-03</a>. Si ya tienes una zona razonablemente delimitada y corresponde inspeccionar elementos ocultos, utiliza <a href="../af-04/" target="_blank" rel="noopener">AF-04</a>. Después de una intervención, registra la comprobación en <a href="../af-06/" target="_blank" rel="noopener">AF-06</a>. Para preparar el presupuesto, utiliza <a href="../af-07/" target="_blank" rel="noopener">AF-07</a>.</p></div>
  <h2>G. Conclusión preliminar</h2>
  <div><label>Sector / zona priorizada</label><input type="text"></div>
  <div style="margin-top:10px"><label>Observaciones profesionales</label><textarea></textarea></div>
@@ -132,12 +135,12 @@ function showPhoto(inp,id){const f=inp.files[0];if(!f)return;const r=new FileRea
 function evaluate(){
  const a=document.getElementById('ambientes').value,b=document.getElementById('baterias').value,r=document.getElementById('ramales').value,e=document.getElementById('evidencia').value;
  let title,detail;
- if(a==='multi'||a==='dos'||b==='si'||r==='si'){title='R2 – Prueba de descarte / sectorización';detail='Existen múltiples ambientes, baterías, pisos o ramales. Evaluar sectorización y AF-03 cuando las condiciones de la instalación lo permitan.'}
- else if(a==='uno' && e==='si'){title='R1 – Inspección localizada';detail='Existe una zona delimitada con evidencia visible. Continuar la evaluación localizada y seleccionar el método apropiado.'}
+ if(a==='multi'||a==='dos'||b==='si'||r==='si'){title='R2 – Evaluar prueba por sectores';detail='Existen múltiples ambientes, baterías, pisos o ramales. Evaluar sectorización y AF-03 cuando las condiciones de la instalación lo permitan.'}
+ else if(a==='uno' && e==='si'){title='R1 – Revisar zona delimitada';detail='La señal está localizada, pero no confirma una fuga. Revisa posibles causas externas y decide si corresponde inspeccionar con AF-04.'}
  else {title='R3 – Evaluación complementaria';detail='La información registrada todavía no permite establecer una ruta suficiente. Ampliar verificaciones antes de intervenir.'}
  document.getElementById('resultado').textContent=title;document.getElementById('detalle').textContent=detail;
 }
-function clearAll(){if(!confirm('¿Limpiar todos los campos del formulario?'))return;document.querySelectorAll('input[type=text],textarea').forEach(x=>x.value='');document.querySelectorAll('input[type=checkbox]').forEach(x=>x.checked=false);document.getElementById('resultado').textContent='Presione “Evaluar diagnóstico”';document.getElementById('detalle').textContent='';document.getElementById('logoBox').innerHTML='LOGO DEL PROFESIONAL<br>O EMPRESA';document.getElementById('p1').textContent='Foto general / manifestación';document.getElementById('p2').textContent='Foto complementaria'}
+function clearAll(){if(!confirm('¿Limpiar todos los campos del formulario?'))return;document.querySelectorAll('input:not([type=file]),textarea').forEach(x=>{if(x.type==='checkbox'||x.type==='radio')x.checked=false;else x.value=''});document.querySelectorAll('select').forEach(x=>x.selectedIndex=0);document.querySelectorAll('input[type=file]').forEach(x=>x.value='');document.getElementById('resultado').textContent='Pulsa «Ver siguiente paso»';document.getElementById('detalle').textContent='';document.getElementById('logoBox').innerHTML='LOGO DEL PROFESIONAL<br>O EMPRESA';document.getElementById('p1').textContent='Foto general / manifestación';document.getElementById('p2').textContent='Foto complementaria'}
 
 document.addEventListener('DOMContentLoaded', function(){
   const evalBtn=document.getElementById('btnEvaluate');
