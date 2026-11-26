@@ -1,221 +1,44 @@
-<!doctype html>
-<html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Soluciones Aquaelite para detección de fugas: Fugas Start, Fugas Digital PRO, Kit Profesional y Bosch D-tect 200 C por separado.">
-  <title>Soluciones profesionales para detección de fugas | Aquaelite</title>
-  <style>
-    :root{--navy:#061a2d;--navy2:#0b2b47;--cyan:#18b9ee;--cyan2:#54d8ff;--ink:#10263a;--muted:#5e7384;--soft:#edf8fc;--line:#cce7f1;--white:#fff;--green:#20b77a;--shadow:0 24px 70px rgba(2,25,44,.14)}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--ink);background:#f7fbfd;line-height:1.55}a{color:inherit}.wrap{width:min(1160px,calc(100% - 36px));margin:auto}
-    header{background:linear-gradient(135deg,#041421 0%,#092b47 60%,#06496a 100%);color:#fff;overflow:hidden;position:relative}header:after{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:rgba(24,185,238,.12);right:-180px;top:-230px;filter:blur(4px)}
-    nav{display:flex;align-items:center;justify-content:space-between;padding:19px 0;position:relative;z-index:2}.logo{width:230px;max-width:52vw;display:block;filter:drop-shadow(0 2px 8px rgba(0,0,0,.2))}.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-weight:800;border-radius:12px;padding:13px 20px;transition:.2s}.nav-cta{border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08)}.nav-cta:hover{background:rgba(255,255,255,.16)}
-    .hero{display:grid;grid-template-columns:.92fr 1.08fr;gap:46px;align-items:center;padding:54px 0 72px;position:relative;z-index:1}.eyebrow{font-weight:900;letter-spacing:.11em;color:var(--cyan2);font-size:.83rem}.hero h1{font-size:clamp(2.3rem,5vw,4.5rem);line-height:1.02;margin:14px 0 18px;letter-spacing:-.045em}.hero p{font-size:1.15rem;color:#d6e9f5;max-width:570px;margin:0 0 26px}.hero-points{display:flex;flex-wrap:wrap;gap:10px}.pill{border:1px solid rgba(84,216,255,.35);background:rgba(10,61,91,.7);padding:8px 12px;border-radius:999px;font-size:.92rem;color:#e8f8ff}.hero-img{width:100%;border-radius:24px;box-shadow:0 32px 75px rgba(0,0,0,.42);border:1px solid rgba(255,255,255,.13);display:block}
-    main{padding:70px 0}.intro{text-align:center;max-width:850px;margin:0 auto 34px}.intro h2{font-size:clamp(2rem,4vw,3.1rem);line-height:1.08;margin:0 0 12px}.intro p{font-size:1.05rem;color:var(--muted);margin:0}.cta-note{margin-top:10px!important;font-size:.92rem!important;color:#08749d!important;font-weight:800}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}.card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:var(--shadow);display:flex;flex-direction:column;position:relative;overflow:hidden}.card.featured{border:2px solid var(--cyan);background:linear-gradient(180deg,#fff 0%,#f2fbff 100%)}.tag{display:inline-flex;align-self:flex-start;background:var(--soft);color:#08749d;border-radius:999px;padding:7px 11px;font-weight:900;font-size:.78rem;letter-spacing:.06em}.featured .tag{background:var(--navy);color:#fff}.card h3{font-size:1.8rem;margin:18px 0 4px;letter-spacing:-.025em}.card .lead{color:var(--muted);min-height:78px;margin:0 0 18px}.price{font-size:2.45rem;line-height:1;font-weight:950;color:var(--navy);margin:8px 0}.tax{font-size:.9rem;color:var(--muted);font-weight:700}.list{list-style:none;padding:0;margin:26px 0;display:grid;gap:12px}.list li{padding-left:28px;position:relative}.list li:before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:950}.note{background:var(--soft);border-left:4px solid var(--cyan);padding:13px 14px;border-radius:8px;color:#284a60;font-size:.94rem;margin-top:auto}.btn{margin-top:22px;background:var(--navy);color:#fff;text-align:center}.featured .btn{background:linear-gradient(90deg,#0587b6,#10bde9)}.btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(8,115,155,.22)}
-    .tools-showcase{margin:44px 0 8px;background:linear-gradient(135deg,#061a2d,#0b3859);border-radius:26px;padding:34px;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:28px;align-items:start;box-shadow:var(--shadow);overflow:hidden}.tools-showcase-copy{color:#fff;min-width:0;padding:12px 0}.tools-showcase .eyebrow{margin-bottom:9px}.tools-showcase h2{font-size:clamp(2rem,4vw,3rem);line-height:1.05;margin:0 0 13px;letter-spacing:-.035em}.tools-showcase p{color:#cfe6f1;margin:0 0 18px}.tools-showcase-points{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:100%}.tools-showcase-points span{border:1px solid rgba(84,216,255,.32);border-radius:999px;padding:7px 10px;font-size:.82rem;color:#e9f9ff;text-align:center;white-space:normal}.tools-showcase-media{display:grid;grid-template-columns:1fr;gap:16px;min-width:0;width:100%}.tools-showcase-media img{display:block;width:100%;height:auto;max-width:100%;border-radius:18px;border:1px solid rgba(255,255,255,.18);box-shadow:0 18px 40px rgba(0,0,0,.28);object-fit:contain}.tools-showcase-media .field-img{margin:0;width:100%;transform:none}.path{margin-top:50px;background:var(--navy);color:#fff;border-radius:24px;padding:34px;display:grid;grid-template-columns:1fr auto 1fr;gap:22px;align-items:center}.path h3{margin:0 0 8px;font-size:1.5rem}.path p{margin:0;color:#c6ddea}.arrow{font-size:2rem;color:var(--cyan2)}
-    .clarity{margin-top:36px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.clarity div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}.clarity b{display:block;color:var(--navy);margin-bottom:5px}.clarity span{color:var(--muted);font-size:.94rem}
-    .equipment-only{margin-top:58px;background:#fff;border:1px solid var(--line);border-radius:28px;overflow:hidden;display:grid;grid-template-columns:1.05fr .95fr;box-shadow:var(--shadow)}.equipment-only-media{background:var(--navy);display:flex;align-items:center;justify-content:center}.equipment-only-media img{width:100%;height:auto;object-fit:contain;display:block}.equipment-only-copy{padding:40px;align-self:center}.equipment-only-copy h2{font-size:clamp(2rem,4vw,3.15rem);line-height:1.05;margin:18px 0 10px;letter-spacing:-.04em}.equipment-only-copy>p{color:var(--muted);margin:0 0 18px}.equipment-only-copy .price{font-size:3rem}.equipment-only-copy .btn{width:100%}.equipment-only-points{list-style:none;padding:0;margin:24px 0;display:grid;gap:11px}.equipment-only-points li{padding-left:28px;position:relative}.equipment-only-points li:before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:950}
-    .comparison{margin-top:62px}.comparison h2{text-align:center;font-size:clamp(1.9rem,4vw,2.8rem);margin:0 0 10px;letter-spacing:-.03em}.comparison-intro{text-align:center;color:var(--muted);max-width:760px;margin:0 auto 25px}.table-wrap{overflow-x:auto;border-radius:20px;border:1px solid var(--line);box-shadow:0 14px 40px rgba(2,25,44,.08)}table{border-collapse:collapse;width:100%;min-width:1040px;background:#fff}th,td{padding:16px 18px;text-align:left;border-bottom:1px solid var(--line)}th{background:#eaf7fc;color:var(--navy);font-size:.93rem}td:first-child{font-weight:800;color:var(--navy)}tr:last-child td{border-bottom:0}.yes{color:#138557;font-weight:800}.no{color:#718391}.optional{color:#08749d;font-weight:800}
-    .faq{margin-top:62px;display:grid;grid-template-columns:.75fr 1.25fr;gap:36px;align-items:start}.faq h2{font-size:clamp(2rem,4vw,3rem);line-height:1.05;margin:0 0 10px;letter-spacing:-.03em}.faq>div>p{color:var(--muted)}details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:12px}summary{cursor:pointer;font-weight:800;color:var(--navy)}details p{color:var(--muted);margin:12px 0 0}
-    .final-cta{margin-top:62px;text-align:center;background:linear-gradient(135deg,#08304d,#075d80);color:#fff;border-radius:24px;padding:42px 28px}.final-cta h2{font-size:clamp(2rem,4vw,3rem);line-height:1.08;margin:0 0 10px}.final-cta p{color:#cfe6f1;margin:0 auto;max-width:700px}.final-cta .btn{background:#fff;color:var(--navy);margin-top:22px}
-    footer{background:#03131f;color:#afc8d7;padding:30px 0;margin-top:64px}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:.92rem}.footer-inner b{color:#fff}
-    @media(max-width:850px){.hero,.cards,.equipment-only,.faq,.tools-showcase{grid-template-columns:1fr}.tools-showcase{padding:24px}.tools-showcase-copy{padding:0}.tools-showcase-points{grid-template-columns:1fr 1fr}.hero{padding-top:34px}.hero-copy{order:1}.hero-media{order:2}.card .lead{min-height:0}.path{grid-template-columns:1fr}.arrow{transform:rotate(90deg);justify-self:center}.clarity{grid-template-columns:1fr}.equipment-only-copy{padding:30px}.faq{gap:16px}.footer-inner{display:block}.footer-inner div+div{margin-top:8px}}
-    @media(max-width:520px){.wrap{width:min(100% - 24px,1160px)}nav{align-items:flex-start}.nav-cta{font-size:.8rem;padding:10px 12px}.hero{gap:28px;padding-bottom:46px}.card{padding:24px}.price{font-size:2.25rem}.path{padding:24px}}
-  </style>
-</head>
-<body>
-  <header>
-    <div class="wrap">
-      <nav>
-        <img class="logo" src="assets/logo-aquaelite.png" alt="Aquaelite, Soluciones Integrales en Agua">
-        <a class="nav-cta" href="https://wa.me/51970683322?text=Hola%20Aquaelite%2C%20quiero%20informaci%C3%B3n%20sobre%20las%20soluciones%20para%20detecci%C3%B3n%20de%20fugas.">Consultar por WhatsApp</a>
-      </nav>
-      <section class="hero">
-        <div class="hero-copy">
-          <div class="eyebrow">DETECCIÓN DE FUGAS · SOLUCIONES PROFESIONALES</div>
-          <h1>Empieza con formación, herramientas digitales, solo el equipo o la solución completa.</h1>
-          <p>Cuatro alternativas Aquaelite para aprender el método, diagnosticar, sectorizar, localizar, documentar y cotizar profesionalmente.</p>
-          <div class="hero-points">
-            <span class="pill">Diagnóstico ordenado</span><span class="pill">Protocolos de campo</span><span class="pill">Informes profesionales</span>
-          </div>
-        </div>
-        <div class="hero-media"><img class="hero-img" src="assets/bosch-dtect-200c-aquaelite.png" alt="Bosch D-tect 200 C y técnico realizando un escaneo de muro"></div>
-      </section>
-    </div>
-  </header>
-
-  <main class="wrap">
-    <section class="intro">
-      <h2>Elige cómo quieres empezar</h2>
-      <p>Elige entre formación, sistema digital, compra directa del Bosch o la solución completa con tecnología especializada.</p>
-      <p class="cta-note">Todos los botones de consulta abren una conversación directa con Aquaelite por WhatsApp.</p>
-    </section>
-
-    <section class="cards" aria-label="Soluciones Aquaelite para detección de fugas">
-      <article class="card">
-        <span class="tag">FORMACIÓN Y CONSULTA</span>
-        <h3>Fugas Start</h3>
-        <p class="lead">La alternativa formativa para comenzar con una metodología ordenada, sin acceso a las herramientas digitales Aquaelite.</p>
-        <div class="price">S/59.00</div>
-        <div class="tax">Pago único · material de consulta permanente</div>
-        <ul class="list">
-          <li>Guía Gráfica Profesional de Diagnóstico de Fugas.</li>
-          <li>Procedimiento visual: entrevista, inspección, descarte, sectorización y hallazgos.</li>
-          <li>Casos gráficos de baños, cocinas, tanques, tuberías y medidor.</li>
-          <li>Checklist previo a la visita.</li>
-          <li>Guía de preguntas al cliente.</li>
-          <li>Material descargable de consulta.</li>
-        </ul>
-        <div class="note"><b>Importante:</b> Fugas Start no incluye acceso a las herramientas digitales Aquaelite.</div>
-        <a class="btn" href="https://wa.me/51970683322?text=Hola%20Aquaelite%2C%20quiero%20informaci%C3%B3n%20sobre%20Fugas%20Start%20por%20S%2F59.00.">Consultar Fugas Start por WhatsApp</a>
-      </article>
-
-      <article class="card">
-        <span class="tag">ENTRADA DIGITAL</span>
-        <h3>Fugas Digital PRO</h3>
-        <p class="lead"><b>Todo el contenido de Fugas Start.</b></p>
-        <div class="price">S/349.90</div>
-        <div class="tax">Pago único · acceso digital por 6 meses · renovable por 1 año</div>
-        <ul class="list">
-          <li>Herramientas digitales de diagnóstico, descarte y sectorización de fugas.</li>
-          <li>Plantilla editable para el registro de hallazgos y evidencia fotográfica.</li>
-          <li>Generación editable de informes profesionales y cotizaciones.</li>
-          <li>Protocolos, guías gráficas y material de apoyo.</li>
-          <li>Una (01) sesión online grupal grabada al mes durante los 6 meses de acceso.</li>
-          <li>Actualizaciones del Pack de Fugas durante la vigencia.</li>
-        </ul>
-        <div class="note"><b>Acceso:</b> 6 meses, con posibilidad de renovación por 1 año. Los archivos descargables entregados permanecen como material de consulta.</div>
-        <a class="btn" href="https://wa.me/51970683322?text=Hola%20Aquaelite%2C%20quiero%20empezar%20con%20Fugas%20Digital%20PRO%20por%20S%2F349.90.">Consultar Digital PRO por WhatsApp</a>
-      </article>
-
-      <article class="card featured">
-        <span class="tag">SOLUCIÓN COMPLETA</span>
-        <h3>Kit Profesional Aquaelite</h3>
-        <p class="lead"><b>Todo el contenido de Fugas Digital PRO.</b></p>
-        <div class="price">S/2,449.90</div>
-        <div class="tax">+ IGV</div>
-        <ul class="list">
-          <li>Todo el contenido de Fugas Digital PRO.</li>
-          <li>Bosch Professional D-tect 200 C.</li>
-          <li>Herramientas digitales Aquaelite por 6 meses, renovables por 1 año.</li>
-          <li>Capacitación para el uso del equipo y del sistema.</li>
-          <li>Dos (02) sesiones de acompañamiento al mes durante 6 meses.</li>
-          <li>Comunidad privada y material selecto.</li>
-        </ul>
-        <div class="note"><b>Renovación digital disponible por 1 año.</b></div>
-        <p style="color:var(--muted);font-size:.9rem;margin:12px 0 0"><b>DSY 40:</b> se comercializa por separado y puede complementar la evaluación.</p>
-        <a class="btn" href="https://wa.me/51970683322?text=Hola%20Aquaelite%2C%20quiero%20informaci%C3%B3n%20del%20Kit%20Profesional%20Aquaelite%20con%20Bosch%20D-tect%20200%20C.">Consultar Kit Profesional por WhatsApp</a>
-      </article>
-    </section>
-
-    <section class="tools-showcase" aria-label="Herramientas digitales Aquaelite para fugas">
-      <div class="tools-showcase-copy">
-        <div class="eyebrow">ASÍ TRABAJAS CON DIGITAL PRO</div>
-        <h2>No es solo material. Son herramientas para aplicar en campo.</h2>
-        <p>Registra el servicio, documenta hallazgos y utiliza el procedimiento digital de descarte y sectorización desde una sola metodología Aquaelite.</p>
-        <div class="tools-showcase-points"><span>Diagnóstico</span><span>Descarte y sectorización</span><span>Registro de hallazgos</span><span>Informes y cotizaciones</span></div>
-      </div>
-      <div class="tools-showcase-media">
-        <img src="https://drive.google.com/thumbnail?id=1uki8yOG3qfr0WMjTqRYo5H9pAOpp_cHm&sz=w1600" alt="Contenido de las herramientas virtuales Aquaelite para diagnóstico y control de fugas">
-      <img class="field-img" src="https://drive.google.com/thumbnail?id=1i7l1mIpAasvy-oG-6vZRFV6RESggILMO&sz=w1600" alt="Aplicación Aquaelite de descarte y sectorización de fugas en campo con equipo de pruebas y escáner">
-      </div>
-    </section>
-
-    <section class="path">
-      <div><h3>¿Todavía no necesitas el Bosch?</h3><p>Empieza con Digital PRO, ordena tu servicio y utiliza las herramientas profesionales durante 6 meses.</p></div>
-      <div class="arrow" aria-hidden="true">→</div>
-      <div><h3>¿Listo para localizar con tecnología?</h3><p>Escala al Kit Profesional e incorpora el Bosch D-tect 200 C con capacitación y acompañamiento.</p></div>
-    </section>
-
-    <section id="equipo-dsy40-complementario" class="equipment-only" style="margin-top:28px">
-  <div class="equipment-only-media"><img loading="lazy" src="https://aquaelitecapacitaciones.github.io/aquaelite-kit-fugas/soluciones-pruebas-hidraulicas/assets/dsy40.jpg" alt="Presurizadora eléctrica DSY-40 para pruebas hidráulicas profesionales"></div>
-  <div class="equipment-only-copy">
-    <span class="tag">EQUIPO COMPLEMENTARIO · PRUEBAS HIDRÁULICAS</span>
-    <h2>Presurizadora DSY-40</h2>
-    <p>¿Después del descarte necesitas verificar si una tubería mantiene la presión? La DSY-40 permite realizar pruebas hidráulicas con un procedimiento profesional. Complementa el diagnóstico de fugas: no localiza por sí sola el punto de rotura.</p>
-    <div class="price">S/950.00</div><div class="tax">IGV incluido · Equipo por separado</div>
-    <ul class="equipment-only-points">
-      <li>Presurizadora eléctrica para pruebas de presión en redes e instalaciones sanitarias.</li>
-      <li>La presión de prueba se define según la condición, materiales y componentes de la instalación.</li>
-      <li>Puede adquirirse de manera independiente o conocerse dentro de las soluciones de pruebas hidráulicas.</li>
-    </ul>
-    <a class="btn" href="https://aquaelitecapacitaciones.github.io/aquaelite-kit-fugas/soluciones-pruebas-hidraulicas/" target="_blank" rel="noopener noreferrer">Conocer la DSY-40 y sus opciones</a>
-    <a class="btn" style="background:#fff;color:#075d80;border:1px solid #80cde3;margin-top:10px" href="https://aquaelitecapacitaciones.github.io/aquaelite-kit-fugas/soluciones-pruebas-hidraulicas/assets/ficha-tecnica-dsy-25-40.pdf" target="_blank" rel="noopener noreferrer">Ver ficha técnica DSY-40</a>
-  </div>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Aquaelite: Kit PRO HY-929, Kit Profesional Bosch, herramientas gratuitas START y diagnóstico de fugas desde S/250 en Lima Metropolitana."><title>Soluciones para detección de fugas | Aquaelite®</title><style>
+:root{--navy:#061a2d;--navy2:#0b2b47;--cyan:#18b9ee;--cyan2:#54d8ff;--ink:#10263a;--muted:#5e7384;--soft:#edf8fc;--line:#cce7f1;--white:#fff;--green:#20b77a;--shadow:0 24px 70px rgba(2,25,44,.14)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,'Segoe UI',Arial,sans-serif;color:var(--ink);background:#f7fbfd;line-height:1.55}a{color:inherit}.wrap{width:min(1160px,calc(100% - 36px));margin:auto}
+header{background:linear-gradient(135deg,#041421 0%,#092b47 60%,#06496a 100%);color:#fff;overflow:hidden;position:relative}header:after{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:rgba(24,185,238,.12);right:-180px;top:-230px;filter:blur(4px)}
+nav{display:flex;align-items:center;justify-content:space-between;padding:19px 0;position:relative;z-index:2}.logo{width:230px;max-width:52vw;display:block;filter:drop-shadow(0 2px 8px rgba(0,0,0,.2))}.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-weight:800;border-radius:12px;padding:13px 20px;transition:.2s}.nav-cta{border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08)}.nav-cta:hover{background:rgba(255,255,255,.16)}
+.hero{display:grid;grid-template-columns:.92fr 1.08fr;gap:46px;align-items:center;padding:54px 0 72px;position:relative;z-index:1}.eyebrow{font-weight:900;letter-spacing:.11em;color:var(--cyan2);font-size:.83rem}.hero h1{font-size:clamp(2.3rem,5vw,4.5rem);line-height:1.02;margin:14px 0 18px;letter-spacing:-.045em}.hero p{font-size:1.15rem;color:#d6e9f5;max-width:570px;margin:0 0 26px}.hero-points{display:flex;flex-wrap:wrap;gap:10px}.pill{border:1px solid rgba(84,216,255,.35);background:rgba(10,61,91,.7);padding:8px 12px;border-radius:999px;font-size:.92rem;color:#e8f8ff}.hero-img{width:100%;border-radius:24px;box-shadow:0 32px 75px rgba(0,0,0,.42);border:1px solid rgba(255,255,255,.13);display:block}
+main{padding:70px 0}.intro{text-align:center;max-width:850px;margin:0 auto 34px}.intro h2{font-size:clamp(2rem,4vw,3.1rem);line-height:1.08;margin:0 0 12px}.intro p{font-size:1.05rem;color:var(--muted);margin:0}.cta-note{margin-top:10px!important;font-size:.92rem!important;color:#08749d!important;font-weight:800}
+.card-groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 20px;align-items:stretch}.group-heading{font-size:1.38rem;font-weight:900;color:var(--navy);border-bottom:3px solid var(--cyan);padding-bottom:12px;letter-spacing:.02em;margin:0}.group-heading.two{grid-column:span 2}.group-heading.one{grid-column:span 1}.card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:var(--shadow);display:flex;flex-direction:column;position:relative;overflow:hidden}.card.featured{border:2px solid var(--cyan);background:linear-gradient(180deg,#fff 0%,#f2fbff 100%)}.tag{display:inline-flex;align-self:flex-start;background:var(--soft);color:#08749d;border-radius:999px;padding:7px 11px;font-weight:900;font-size:.75rem;letter-spacing:.06em}.featured .tag{background:var(--navy);color:#fff}.card h3{font-size:1.75rem;margin:13px 0 5px;letter-spacing:-.025em;line-height:1.16}.card .lead{color:var(--muted);min-height:64px;margin:0 0 9px}.price{font-size:2.25rem;line-height:1.1;font-weight:950;color:var(--navy);margin:10px 0 4px}.tax{font-size:.9rem;color:var(--muted);font-weight:700}.list{list-style:none;padding:0;margin:19px 0;display:grid;gap:10px;font-size:.92rem}.list li{padding-left:23px;position:relative}.list li:before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:950}.note{background:var(--soft);border-left:4px solid var(--cyan);padding:13px 14px;border-radius:8px;color:#284a60;font-size:.87rem;margin-top:auto}.btn{margin-top:19px;background:var(--navy);color:#fff;text-align:center;font-size:.9rem}.featured .btn,.btn-cyan{background:linear-gradient(90deg,#0587b6,#10bde9)}.btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(8,115,155,.22)}.product-img{display:block;width:100%;height:188px;object-fit:contain;border-radius:14px;background:#eff8fc;margin:13px 0 5px}.service-photo{object-fit:cover}.service-card .lead{min-height:0}
+.tools-showcase{margin:44px 0 8px;background:linear-gradient(135deg,#061a2d,#0b3859);border-radius:26px;padding:34px;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:28px;align-items:start;box-shadow:var(--shadow);overflow:hidden}.tools-showcase-copy{color:#fff;min-width:0;padding:12px 0}.tools-showcase .eyebrow{margin-bottom:9px}.tools-showcase h2{font-size:clamp(2rem,4vw,3rem);line-height:1.05;margin:0 0 13px;letter-spacing:-.035em}.tools-showcase p{color:#cfe6f1;margin:0 0 18px}.tools-showcase-points{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:100%}.tools-showcase-points span{border:1px solid rgba(84,216,255,.32);border-radius:999px;padding:7px 10px;font-size:.82rem;color:#e9f9ff;text-align:center;white-space:normal}.tools-showcase-media{display:grid;grid-template-columns:1fr;gap:16px;min-width:0;width:100%}.tools-showcase-media img{display:block;width:100%;height:auto;max-width:100%;border-radius:18px;border:1px solid rgba(255,255,255,.18);box-shadow:0 18px 40px rgba(0,0,0,.28);object-fit:contain}.tools-showcase-media .field-img{margin:0;width:100%;transform:none}.free-tag{font-size:.95rem;color:#fff;background:#078a67;padding:7px 13px;border-radius:999px;display:inline-block;font-weight:900;margin:7px 0 20px}.tools-showcase .btn{background:linear-gradient(90deg,#0485b6,#0ec3ea);color:white;display:flex;width:100%;margin-top:20px}
+.path{margin-top:48px;background:var(--navy);color:#fff;border-radius:24px;padding:34px;display:grid;grid-template-columns:1fr auto 1fr;gap:22px;align-items:center}.path h3{margin:0 0 8px;font-size:1.5rem}.path p{margin:0;color:#c6ddea}.arrow{font-size:2rem;color:var(--cyan2)}
+.guide-section{margin-top:34px;display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:26px;align-items:center;border-radius:25px;background:#fff;border:1px solid var(--line);overflow:hidden;box-shadow:var(--shadow)}.guide-body{padding:38px}.guide-body h2{font-size:clamp(2rem,4vw,3rem);line-height:1.06;margin:14px 0}.guide-body p{color:var(--muted)}.guide-body .btn{display:inline-flex}.guide-media{background:#e9f5fb;max-height:590px;overflow:hidden;display:flex;justify-content:center}.guide-media img{width:100%;max-height:590px;object-fit:cover;object-position:center}.guide-media{cursor:zoom-in}.guide-tiny{font-size:.83rem!important}
+.equipment-only{margin-top:48px;background:#fff;border:1px solid var(--line);border-radius:28px;overflow:hidden;display:grid;grid-template-columns:1.05fr .95fr;box-shadow:var(--shadow)}.equipment-only-media{background:var(--navy);display:flex;align-items:center;justify-content:center}.equipment-only-media img{width:100%;height:auto;object-fit:contain;display:block}.equipment-only-copy{padding:40px;align-self:center}.equipment-only-copy h2{font-size:clamp(2rem,4vw,3.15rem);line-height:1.05;margin:18px 0 10px;letter-spacing:-.04em}.equipment-only-copy>p{color:var(--muted);margin:0 0 18px}.equipment-only-copy .price{font-size:3rem}.equipment-only-copy .btn{width:100%}.equipment-only-points{list-style:none;padding:0;margin:24px 0;display:grid;gap:11px}.equipment-only-points li{padding-left:28px;position:relative}.equipment-only-points li:before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:950}
+.comparison{margin-top:62px}.comparison h2{text-align:center;font-size:clamp(1.9rem,4vw,2.8rem);margin:0 0 10px;letter-spacing:-.03em}.comparison-intro{text-align:center;color:var(--muted);max-width:760px;margin:0 auto 25px}.table-wrap{overflow-x:auto;border-radius:20px;border:1px solid var(--line);box-shadow:0 14px 40px rgba(2,25,44,.08)}table{border-collapse:collapse;width:100%;min-width:920px;background:#fff}th,td{padding:15px 17px;text-align:left;border-bottom:1px solid var(--line)}th{background:#eaf7fc;color:var(--navy);font-size:.93rem}td:first-child{font-weight:800;color:var(--navy)}tr:last-child td{border-bottom:0}.yes{color:#138557;font-weight:800}.no{color:#718391}.optional{color:#08749d;font-weight:800}
+.faq{margin-top:62px;display:grid;grid-template-columns:.75fr 1.25fr;gap:36px;align-items:start}.faq h2{font-size:clamp(2rem,4vw,3rem);line-height:1.05;margin:0 0 10px;letter-spacing:-.03em}.faq>div>p{color:var(--muted)}details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:12px}summary{cursor:pointer;font-weight:800;color:var(--navy)}details p{color:var(--muted);margin:12px 0 0}
+.final-cta{margin-top:62px;text-align:center;background:linear-gradient(135deg,#08304d,#075d80);color:#fff;border-radius:24px;padding:42px 28px}.final-cta h2{font-size:clamp(2rem,4vw,3rem);line-height:1.08;margin:0 0 10px}.final-cta p{color:#cfe6f1;margin:0 auto;max-width:700px}.final-cta .btn{background:#fff;color:var(--navy);margin-top:22px}footer{background:#03131f;color:#afc8d7;padding:30px 0;margin-top:64px}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:.92rem}.footer-inner b{color:#fff}
+@media(max-width:850px){.hero,.equipment-only,.faq,.tools-showcase,.guide-section{grid-template-columns:1fr}.card-groups{grid-template-columns:repeat(2,minmax(0,1fr))}.group-heading.one{grid-column:1/-1}.group-heading.two{grid-column:1/-1}.service-card{grid-column:1/-1}.tools-showcase{padding:24px}.tools-showcase-copy{padding:0}.hero{padding-top:34px}.hero-copy{order:1}.hero-media{order:2}.card .lead{min-height:0}.path{grid-template-columns:1fr}.arrow{transform:rotate(90deg);justify-self:center}.equipment-only-copy{padding:30px}.faq{gap:16px}.footer-inner{display:block}.footer-inner div+div{margin-top:8px}.guide-media{max-height:500px}.guide-body{padding:24px}}@media(max-width:560px){.wrap{width:min(100% - 24px,1160px)}nav{align-items:flex-start}.nav-cta{font-size:.8rem;padding:10px 12px}.hero{gap:28px;padding-bottom:46px}.card-groups{grid-template-columns:1fr}.group-heading.two,.group-heading.one,.service-card{grid-column:1}.card{padding:23px}.price{font-size:2.25rem}.path{padding:24px}.tools-showcase-points{grid-template-columns:1fr 1fr}.product-img{height:205px}}
+</style></head><body>
+<header><div class="wrap"><nav><img class="logo" src="assets/logo-aquaelite.png" alt="Aquaelite Soluciones Integrales en Agua"><a class="nav-cta" href="https://wa.me/51970683322?text=Hola%20Aquaelite%2C%20deseo%20informaci%C3%B3n%20sobre%20sus%20soluciones%20para%20detecci%C3%B3n%20de%20fugas.">Consultar por WhatsApp</a></nav><section class="hero"><div class="hero-copy"><div class="eyebrow">DETECCIÓN DE FUGAS · SOLUCIONES PROFESIONALES</div><h1>Empieza con herramientas gratuitas, equipos o diagnóstico especializado.</h1><p>Para profesionales, empresas y hogares. Elige la solución adecuada para tus instalaciones de agua.</p><div class="hero-points"><span class="pill">Diagnóstico ordenado</span><span class="pill">Protocolos de campo</span><span class="pill">Informes profesionales</span></div></div><div class="hero-media"><img class="hero-img" src="assets/portada-bosch-aquaelite.png" alt="Técnico latino Aquaelite con casco blanco usando scanner Bosch Professional D-tect 200 C para revisar tuberías ocultas"></div></section></div></header>
+<main class="wrap"><section class="intro"><h2>Elige cómo quieres empezar</h2><p>Equipos y acompañamiento para empresas; diagnóstico técnico para hogares y oficinas.</p></section>
+<section class="card-groups" aria-label="Soluciones Aquaelite para detección de fugas"><h2 class="group-heading two">PARA EMPRESAS Y SERVICIOS</h2><h2 class="group-heading one">PARA CASAS U OFICINAS</h2>
+<article class="card"><span class="tag">EQUIPO + CAPACITACIÓN</span><h3>Kit PRO · HY-929</h3><img class="product-img" src="assets/hy929.png" alt="Minigeófono HY-929, modelo real del equipo"><p class="lead">Escucha y apoya la identificación de posibles fugas.</p><div class="price">S/369.90</div><div class="tax">Consultar condiciones de compra</div><ul class="list"><li>Acceso gratuito START.</li><li>01 minigeófono HY-929 + 01 audífono auxiliar Vortex Tech de regalo.</li><li>Guía gráfica profesional y video tutorial grabado.</li><li>01 sesión grupal online grabada al mes por 6 meses.</li></ul><div class="note">Equipo de escucha para complementar el diagnóstico. La indicación requiere evaluación técnica.</div><a class="btn" href="https://wa.me/51970683322?text=Hola%20Aquaelite%2C%20deseo%20consultar%20por%20el%20Kit%20PRO%20HY-929%20de%20S/369.90.">CONSULTAR KIT PRO</a></article>
+<article class="card featured"><span class="tag">SOLUCIÓN COMPLETA</span><h3>Kit Profesional Aquaelite</h3><img class="product-img" src="https://aquaelitecapacitaciones.github.io/aquaelite-kit-fugas/soluciones-fugas/assets/bosch-dtect-200c-aquaelite.png" alt="Bosch Professional D-tect 200 C y aplicación técnica"><p class="lead">Escaneo, capacitación y acompañamiento especializado.</p><div class="price">S/2,449.90</div><div class="tax">+ IGV</div><ul class="list"><li>01 Bosch Professional D-tect 200 C.</li><li>Todo el acceso gratuito START.</li><li>Capacitación para uso del equipo y sistema.</li><li>01 sesión de acompañamiento mensual por 6 meses.</li><li>Comunidad privada y material selecto.</li></ul><div class="note"><b>Renovación digital disponible por 1 año.</b> La DSY-40 se vende por separado.</div><a class="btn" href="https://wa.me/51970683322?text=Hola%20Aquaelite%2C%20quisiera%20informaci%C3%B3n%20del%20Kit%20Profesional%20con%20Bosch%20D-tect%20200%20C.">CONSULTAR KIT PROFESIONAL</a></article>
+<article class="card service-card"><span class="tag">VISITA TÉCNICA · LIMA</span><h3>Diagnóstico de fugas</h3><img class="product-img service-photo" src="assets/diagnostico-aquaelite.png" alt="Técnico Aquaelite con casco blanco, minigeófono HY-929 y visualización ilustrativa de tuberías ocultas"><p class="lead">¿Sospechas que existe una fuga en tu vivienda u oficina?</p><div class="price">Desde S/250</div><div class="tax">Lima Metropolitana</div><ul class="list"><li>Evaluación con escáner y geófono.</li><li>Asistencia de ingeniera sanitaria.</li><li>Reporte breve con hallazgos y conclusiones.</li></ul><div class="note"><b>Solo diagnóstico.</b> No incluye reparación. </div><a class="btn btn-cyan" href="https://wa.me/51970683322?text=Hola%20Aquaelite%2C%20deseo%20solicitar%20el%20servicio%20de%20diagn%C3%B3stico%20de%20fugas%20en%20Lima%20Metropolitana%2C%20desde%20S/250.%20%C2%BFPodr%C3%ADan%20indicarme%20disponibilidad%3F">SOLICITAR DIAGNÓSTICO</a></article>
 </section>
-<section class="equipment-only" id="solo-bosch">
-      <div class="equipment-only-media">
-        <img src="assets/bosch-dtect-200c-aquaelite.png" alt="Bosch Professional D-tect 200 C y técnico Aquaelite realizando un escaneo">
-      </div>
-      <div class="equipment-only-copy">
-        <span class="tag">COMPRA DIRECTA</span>
-        <h2>Solo equipo Bosch D‑tect 200 C</h2>
-        <p>Para quien ya cuenta con metodología y desea incorporar directamente tecnología profesional de exploración en muros y pisos.</p>
-        <div class="price">S/2,299.00</div>
-        <div class="tax">+ IGV</div>
-        <ul class="equipment-only-points">
-          <li>Bosch Professional D‑tect 200 C.</li>
-          <li>Equipo físico para complementar la evaluación de fugas ocultas.</li>
-          <li>Compra independiente, sin acceso a las herramientas digitales Aquaelite.</li>
-          <li>No incluye sesiones de capacitación ni acompañamiento.</li>
-        </ul>
-        <div class="note"><b>¿También necesitas metodología y herramientas?</b> Revisa el Kit Profesional Aquaelite, que integra el Bosch, el sistema digital y el acompañamiento.</div>
-        <a class="btn" href="https://wa.me/51970683322?text=Hola%20Aquaelite%2C%20quiero%20adquirir%20solo%20el%20equipo%20Bosch%20D-tect%20200%20C%20por%20S%2F2%2C299.00%20m%C3%A1s%20IGV.">Comprar solo el Bosch</a>
-        <a class="btn" href="https://aquaelitecapacitaciones.github.io/aquaelite-kit-fugas/ficha-dtect-200c/" target="_blank" rel="noopener noreferrer" style="background:#fff;color:#075d80;border:1px solid #80cde3;margin-top:10px">Ver ficha técnica Bosch D-tect 200 C ↗</a>
-      </div>
-    </section>
-
-    <section class="clarity">
-      <div><b>Fugas Start</b><span>Formación y consulta. No incluye herramientas digitales.</span></div>
-      <div><b>Digital PRO</b><span>Todo Fugas Start, herramientas digitales, formatos editables, protocolos y 01 sesión grupal grabada al mes durante 6 meses.</span></div>
-      <div><b>Kit Profesional</b><span>Bosch, sistema digital, capacitación y acompañamiento por 6 meses.</span></div>
-      <div><b>Solo Bosch</b><span>Equipo D‑tect 200 C sin herramientas digitales ni acompañamiento.</span></div>
-    </section>
-
-    <section class="comparison" aria-label="Comparación de soluciones Aquaelite">
-      <h2>Compara antes de elegir</h2>
-      <p class="comparison-intro">Revisa qué permanece como material de consulta, qué requiere acceso vigente y cuál alternativa incorpora el equipo Bosch.</p>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr><th>Incluye</th><th>Fugas Start</th><th>Fugas Digital PRO</th><th>Kit Profesional</th><th>Solo Bosch</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Guía y material descargable</td><td class="yes">Sí · permanente</td><td class="yes">Sí · permanente</td><td class="yes">Sí · permanente</td><td class="no">No</td></tr>
-            <tr><td>Herramientas digitales</td><td class="no">No</td><td class="yes">Sí · 6 meses</td><td class="yes">Sí · 6 meses</td><td class="no">No</td></tr>
-            <tr><td>Plantillas, informes y cotizaciones editables</td><td class="no">No</td><td class="yes">Sí</td><td class="yes">Sí</td><td class="no">No</td></tr>
-            <tr><td>Bosch D‑tect 200 C</td><td class="no">No</td><td class="no">No</td><td class="yes">Sí</td><td class="yes">Sí</td></tr>
-            <tr><td>Sesiones incluidas</td><td class="no">No</td><td class="yes">01 grupal grabada al mes</td><td class="yes">02 de acompañamiento al mes</td><td class="no">No</td></tr>
-            <tr><td>Renovación digital</td><td class="no">No aplica</td><td class="optional">Disponible por 1 año</td><td class="optional">Disponible por 1 año</td><td class="no">No aplica</td></tr>
-            <tr><td>Inversión</td><td><b>S/59.00</b></td><td><b>S/349.90</b></td><td><b>S/2,449.90 + IGV</b></td><td><b>S/2,299.00 + IGV</b></td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="faq">
-      <div>
-        <h2>Preguntas claras antes de elegir</h2>
-        <p>Identifica qué opción corresponde a tu momento actual antes de realizar la compra.</p>
-      </div>
-      <div>
-        <details open><summary>¿Fugas Start incluye las herramientas digitales?</summary><p>No. Fugas Start es una alternativa de formación y consulta. Incluye la guía, el procedimiento visual, los casos gráficos, el checklist, la guía de preguntas y material descargable.</p></details>
-        <details><summary>¿Fugas Digital PRO incluye algún equipo físico?</summary><p>No. Incluye todo el contenido de Fugas Start más las herramientas digitales, los formatos editables y una sesión online grupal grabada al mes durante los 6 meses de acceso. El Bosch puede adquirirse por separado o como parte del Kit Profesional.</p></details>
-        <details><summary>¿Qué permanece cuando termina el acceso de 6 meses?</summary><p>Los archivos descargables entregados permanecen como material de consulta. El uso de las herramientas digitales requiere que el acceso se encuentre vigente.</p></details>
-        <details><summary>¿Puedo renovar el acceso digital?</summary><p>Sí. Fugas Digital PRO y el Kit Profesional permiten renovar el acceso digital por 1 año.</p></details>
-        <details><summary>¿El Kit Profesional incluye el Bosch D‑tect 200 C?</summary><p>Sí. El Kit Profesional incluye el Bosch Professional D‑tect 200 C, las herramientas digitales, la capacitación y el acompañamiento durante 6 meses.</p></details>
-        <details><summary>¿Puedo comprar únicamente el Bosch D‑tect 200 C?</summary><p>Sí. El equipo se comercializa por S/2,299.00 + IGV. Esta compra no incluye las herramientas digitales, los formatos Aquaelite ni las sesiones de capacitación y acompañamiento.</p></details>
-        <details><summary>¿El equipo de pruebas hidráulicas DSY‑40 está incluido?</summary><p>No. La presurizadora DSY‑40 se comercializa por separado y puede complementar el diagnóstico y la sectorización.</p></details>
-      </div>
-    </section>
-
-    <section class="final-cta">
-      <h2>Elige cómo quieres empezar</h2>
-      <p>Formación, herramientas digitales, solo el Bosch o la solución completa. Escríbenos y revisamos cuál corresponde a tu servicio.</p>
-      <a class="btn" href="https://wa.me/51970683322?text=Hola%20Aquaelite%2C%20quiero%20elegir%20una%20opci%C3%B3n%20para%20detecci%C3%B3n%20de%20fugas.">Hablar con Aquaelite por WhatsApp</a>
-    </section>
-  </main>
-
-  <footer><div class="wrap footer-inner"><div><b>AQUAELITE®</b> · Soluciones Integrales en Agua</div><div>Efire Ingeniería · RUC 20609284651 · WhatsApp 970 683 322</div></div></footer>
-</body>
-</html>
+<section class="tools-showcase" aria-label="Herramientas digitales gratuitas Aquaelite para fugas"><div class="tools-showcase-copy"><div class="eyebrow">HERRAMIENTAS GRATUITAS AQUAELITE</div><h2>Kit de Fugas START: empieza gratis.</h2><span class="free-tag">ACCESO GRATUITO</span><p>No es solo material. Son herramientas para aplicar en campo, desde tu navegador.</p><div class="tools-showcase-points"><span>Registros y evidencias</span><span>Descarte y sectorización</span><span>Informes y cotizaciones</span><span>Guías y protocolos</span></div><p style="margin-top:21px">Incluye recursos para instalaciones sanitarias y otros diagnósticos técnicos, como sistemas contra incendios, según las herramientas disponibles.</p><a class="btn" href="https://script.google.com/macros/s/AKfycbx0FesXI_W_6zVt8IyCssFDsHK2FEu6R5eBU7uRfOgKIzzKxmpq802chUR1HWZiTUbXng/exec?src=KIT_FUGAS&cmp=LANDING_FUGAS_START" target="_blank" rel="noopener noreferrer">ACCEDER GRATIS AHORA</a><p style="font-size:.83rem;margin:12px 0 0">Regístrate con tu correo y verifica el código de acceso. No requiere compra.</p></div><div class="tools-showcase-media"><img src="https://drive.google.com/thumbnail?id=1uki8yOG3qfr0WMjTqRYo5H9pAOpp_cHm&sz=w1600" alt="Imagen original Aquaelite: laptop mostrando las herramientas virtuales"><img class="field-img" src="https://drive.google.com/thumbnail?id=1i7l1mIpAasvy-oG-6vZRFV6RESggILMO&sz=w1600" alt="Imagen original Aquaelite: técnico observando herramientas digitales en una tablet"></div></section>
+<section class="path"><div><h3>¿Quieres empezar con equipo de escucha?</h3><p>Kit PRO HY-929: guía, tutorial y sesiones grupales durante 6 meses.</p></div><div class="arrow" aria-hidden="true">→</div><div><h3>¿Necesitas un escáner profesional?</h3><p>El Kit Profesional incorpora Bosch D-tect 200 C, capacitación y acompañamiento.</p></div></section>
+<section class="guide-section" id="guia-fugas"><div class="guide-body"><span class="tag">GUÍA GRATUITA PARA HOGARES</span><h2>¿Crees que tienes una fuga en casa?</h2><p>Antes de contratar una visita, revisa tu medidor, griferías, inodoro y tanque o cisterna.</p><p>Una guía visual para identificar señales de alerta y decidir cuándo solicitar ayuda.</p><a class="btn btn-cyan open-full-guide" href="assets/guia-autodiagnostico.png" target="_blank" rel="noopener noreferrer">VER GUÍA DE AUTODIAGNÓSTICO</a><p class="guide-tiny">La guía es orientativa; no reemplaza una evaluación técnica.</p></div><a class="guide-media open-full-guide" href="assets/guia-autodiagnostico.png" target="_blank" rel="noopener noreferrer" aria-label="Abrir guía Aquaelite"><img loading="lazy" src="assets/guia-preview-aquaelite.png" alt="Técnico Aquaelite y cuatro pasos para revisar medidor, griferías, inodoro y tanque; haz clic para abrir la guía completa"></a></section>
+<section id="equipo-dsy40-complementario" class="equipment-only" style="margin-top:34px"><div class="equipment-only-media"><img loading="lazy" src="https://aquaelitecapacitaciones.github.io/aquaelite-kit-fugas/soluciones-pruebas-hidraulicas/assets/dsy40.jpg" alt="Imagen original de la presurizadora DSY-40"></div><div class="equipment-only-copy"><span class="tag">EQUIPO COMPLEMENTARIO · PRUEBAS HIDRÁULICAS</span><h2>Presurizadora DSY-40</h2><p>¿Después del descarte necesitas verificar si una tubería mantiene la presión? Complementa el diagnóstico mediante pruebas hidráulicas; no localiza por sí sola la rotura.</p><div class="price">S/950.00</div><div class="tax">IGV incluido · Equipo por separado</div><ul class="equipment-only-points"><li>Equipo eléctrico para pruebas de presión.</li><li>La presión aplicable depende de la instalación.</li><li>Comercialización independiente.</li></ul><a class="btn" href="https://aquaelitecapacitaciones.github.io/aquaelite-kit-fugas/soluciones-pruebas-hidraulicas/" target="_blank" rel="noopener noreferrer">CONOCER LA DSY-40 Y SUS OPCIONES</a><a class="btn" style="background:#fff;color:#075d80;border:1px solid #80cde3;margin-top:10px" href="https://aquaelitecapacitaciones.github.io/aquaelite-kit-fugas/soluciones-pruebas-hidraulicas/assets/ficha-tecnica-dsy-25-40.pdf" target="_blank" rel="noopener noreferrer">VER FICHA TÉCNICA</a></div></section>
+<section class="equipment-only" id="solo-bosch"><div class="equipment-only-media"><img loading="lazy" src="assets/bosch-tecnico-latino.jpg" alt="Imagen original del scanner Bosch D-tect 200 C"></div><div class="equipment-only-copy"><span class="tag">COMPRA DIRECTA</span><h2>Solo equipo Bosch D-tect 200 C</h2><p>Compra independiente para quien ya dispone de metodología de inspección.</p><div class="price">S/2,299.00</div><div class="tax">+ IGV</div><ul class="equipment-only-points"><li>Bosch Professional D-tect 200 C.</li><li>Sin capacitación ni acompañamiento incluidos.</li><li>START gratuito disponible por separado.</li></ul><div class="note">El Kit Profesional incorpora además capacitación y acompañamiento.</div><a class="btn" href="https://wa.me/51970683322?text=Hola%20Aquaelite%2C%20deseo%20consultar%20por%20la%20compra%20independiente%20del%20Bosch%20D-tect%20200%20C.">CONSULTAR SOLO BOSCH</a><a class="btn" href="https://aquaelitecapacitaciones.github.io/aquaelite-kit-fugas/ficha-dtect-200c/" target="_blank" rel="noopener noreferrer" style="background:#fff;color:#075d80;border:1px solid #80cde3;margin-top:10px">VER FICHA TÉCNICA BOSCH ↗</a></div></section>
+<section class="comparison" aria-label="Comparación de soluciones"><h2>Compara antes de elegir</h2><p class="comparison-intro">El acceso START es gratuito para todos. Los kits agregan equipos y acompañamiento según tu necesidad.</p><div class="table-wrap"><table><thead><tr><th>Incluye</th><th>START gratuito</th><th>Kit PRO HY-929</th><th>Kit Profesional</th><th>Solo Bosch</th></tr></thead><tbody><tr><td>Portal de herramientas gratuitas</td><td class="yes">Sí</td><td class="yes">Sí</td><td class="yes">Sí</td><td class="optional">Acceso gratuito por separado</td></tr><tr><td>Plantillas, informes y cotizaciones</td><td class="yes">Sí, herramientas gratuitas</td><td class="yes">Sí</td><td class="yes">Sí</td><td class="optional">Solo START gratuito</td></tr><tr><td>Guía profesional y video tutorial</td><td class="optional">Guías base del portal</td><td class="yes">Ambos</td><td class="optional">Capacitación incluida</td><td class="no">No incluidos</td></tr><tr><td>Minigeófono HY-929</td><td class="no">No</td><td class="yes">Sí + audífono de regalo</td><td class="no">No</td><td class="no">No</td></tr><tr><td>Bosch D-tect 200 C</td><td class="no">No</td><td class="no">No</td><td class="yes">Sí</td><td class="yes">Sí</td></tr><tr><td>Sesiones durante seis meses</td><td class="no">No</td><td class="yes">1 grupal grabada/mes</td><td class="yes">1 acompañamiento/mes</td><td class="no">No</td></tr><tr><td>Renovación digital</td><td class="optional">Acceso gratuito vigente</td><td class="no">No especificada</td><td class="optional">Disponible por 1 año</td><td class="no">No aplica</td></tr><tr><td>Inversión</td><td class="yes">GRATIS</td><td><b>S/369.90</b></td><td><b>S/2,449.90 + IGV</b></td><td><b>S/2,299 + IGV</b></td></tr></tbody></table></div></section>
+<section class="faq"><div><h2>Preguntas claras antes de elegir</h2><p>Resolvemos las dudas más comunes sin complicarte la decisión.</p></div><div><details open><summary>¿START es realmente gratuito?</summary><p>Sí. Registras tu correo, lo verificas y accedes a las herramientas gratuitas disponibles en el Portal Aquaelite. No necesitas comprar un kit.</p></details><details><summary>¿Qué agrega el Kit PRO HY-929?</summary><p>Minigeófono HY-929, audífono auxiliar de regalo, guía profesional, video tutorial y una sesión grupal grabada al mes durante seis meses.</p></details><details><summary>¿Para quién es el Kit Profesional?</summary><p>Para quienes desean incorporar el scanner Bosch D-tect 200 C junto con capacitación, acompañamiento mensual por seis meses y comunidad privada.</p></details><details><summary>¿El HY-929 o el Bosch confirman el punto exacto de la fuga?</summary><p>No por sí solos. Son equipos de apoyo al diagnóstico y sus resultados deben interpretarse junto con la inspección y otras verificaciones.</p></details><details><summary>¿La DSY-40 detecta fugas?</summary><p>La DSY-40 permite pruebas hidráulicas para verificar el comportamiento de tuberías bajo presión. No identifica por sí sola la ubicación exacta.</p></details><details><summary>¿Puedo comprar únicamente el Bosch?</summary><p>Sí. El equipo se comercializa por separado a S/2,299 + IGV, sin capacitación ni acompañamiento.</p></details><details><summary>¿Puedo solicitar que Aquaelite revise mi casa u oficina?</summary><p>Sí. En Lima Metropolitana ofrecemos diagnóstico desde S/250, con escáner, geófono y asistencia de ingeniera sanitaria. Incluye un reporte breve. No incluye reparación.</p></details></div></section>
+<section class="final-cta"><h2>¿Quieres empezar hoy?</h2><p>Herramientas gratuitas para trabajar por tu cuenta, equipos especializados o visita técnica a domicilio.</p><a class="btn" href="https://wa.me/51970683322?text=Hola%20Aquaelite%2C%20deseo%20informaci%C3%B3n%20sobre%20sus%20soluciones%20para%20detecci%C3%B3n%20de%20fugas.">HABLAR CON AQUAELITE POR WHATSAPP</a></section></main><footer><div class="wrap footer-inner"><div><b>AQUAELITE®</b> · Soluciones Integrales en Agua</div><div>EFIRE INGENIERIA EIRL · RUC 20609284651 · WhatsApp 970 683 322</div></div></footer><style>
+.guide-viewer{border:0;padding:0;border-radius:18px;max-width:min(98vw,1040px);max-height:96vh;background:transparent;box-shadow:0 20px 90px #0007}.guide-viewer::backdrop{background:rgba(2,14,27,.87)}.guide-viewer img{display:block;width:100%;height:auto;max-height:89vh;object-fit:contain;background:white;border-radius:12px}.guide-viewer-close{position:sticky;top:8px;float:right;z-index:4;border:0;border-radius:100px;background:#061a2d;color:white;font-size:1rem;font-weight:800;padding:10px 18px;cursor:pointer;margin:8px}.guide-viewer-heading{background:#061a2d;color:#fff;padding:10px 16px;font-weight:700;font-size:.93rem}
+</style>
+<dialog id="aqua-guide-dialog" class="guide-viewer" aria-label="Guía completa de autodiagnóstico de fugas Aquaelite"><button class="guide-viewer-close" type="button" aria-label="Cerrar guía">✕ Cerrar</button><div class="guide-viewer-heading">Guía de autodiagnóstico de fugas Aquaelite · Haz zoom para leer los pasos</div><img src="assets/guia-autodiagnostico.png" alt="Infografía completa de autodiagnóstico: revisar medidor, griferías, inodoro y tanque; consejos para actuar ante una posible fuga"></dialog>
+<script>
+(function(){
+ const dialog=document.getElementById('aqua-guide-dialog');
+ document.querySelectorAll('.open-full-guide').forEach(link=>link.addEventListener('click',function(e){if(dialog&&typeof dialog.showModal==='function'){e.preventDefault();dialog.showModal();}}));
+ dialog?.querySelector('.guide-viewer-close')?.addEventListener('click',()=>dialog.close());
+ dialog?.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});
+})();
+</script>
+</body></html>
