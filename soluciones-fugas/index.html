@@ -14,6 +14,35 @@ main{padding:70px 0}.intro{text-align:center;max-width:850px;margin:0 auto 34px}
 .faq{margin-top:62px;display:grid;grid-template-columns:.75fr 1.25fr;gap:36px;align-items:start}.faq h2{font-size:clamp(2rem,4vw,3rem);line-height:1.05;margin:0 0 10px;letter-spacing:-.03em}.faq>div>p{color:var(--muted)}details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:12px}summary{cursor:pointer;font-weight:800;color:var(--navy)}details p{color:var(--muted);margin:12px 0 0}
 .final-cta{margin-top:62px;text-align:center;background:linear-gradient(135deg,#08304d,#075d80);color:#fff;border-radius:24px;padding:42px 28px}.final-cta h2{font-size:clamp(2rem,4vw,3rem);line-height:1.08;margin:0 0 10px}.final-cta p{color:#cfe6f1;margin:0 auto;max-width:700px}.final-cta .btn{background:#fff;color:var(--navy);margin-top:22px}footer{background:#03131f;color:#afc8d7;padding:30px 0;margin-top:64px}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:.92rem}.footer-inner b{color:#fff}
 @media(max-width:850px){.hero,.equipment-only,.faq,.tools-showcase,.guide-section{grid-template-columns:1fr}.card-groups{grid-template-columns:repeat(2,minmax(0,1fr))}.group-heading.one{grid-column:1/-1}.group-heading.two{grid-column:1/-1}.service-card{grid-column:1/-1}.tools-showcase{padding:24px}.tools-showcase-copy{padding:0}.hero{padding-top:34px}.hero-copy{order:1}.hero-media{order:2}.card .lead{min-height:0}.path{grid-template-columns:1fr}.arrow{transform:rotate(90deg);justify-self:center}.equipment-only-copy{padding:30px}.faq{gap:16px}.footer-inner{display:block}.footer-inner div+div{margin-top:8px}.guide-media{max-height:500px}.guide-body{padding:24px}}@media(max-width:560px){.wrap{width:min(100% - 24px,1160px)}nav{align-items:flex-start}.nav-cta{font-size:.8rem;padding:10px 12px}.hero{gap:28px;padding-bottom:46px}.card-groups{grid-template-columns:1fr}.group-heading.two,.group-heading.one,.service-card{grid-column:1}.card{padding:23px}.price{font-size:2.25rem}.path{padding:24px}.tools-showcase-points{grid-template-columns:1fr 1fr}.product-img{height:205px}}
+
+/* V3.1 Mejora de proporciones generales y tarjetas de productos */
+@media(min-width:901px){
+  .wrap{width:min(1460px,calc(100% - 56px))}
+  .card-groups{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 20px}
+  .card-groups>.card{min-width:0;padding:27px 26px}
+  .card-groups .group-heading{min-height:57px;display:flex;align-items:center;font-size:clamp(1.25rem,1.7vw,1.65rem)}
+  .card-groups .card h3{font-size:clamp(1.5rem,2vw,1.9rem);min-height:2.25em;display:flex;align-items:center;margin:12px 0 8px}
+  .card-groups .product-img{height:clamp(265px,23vw,335px);width:100%;margin:8px 0 15px;padding:6px;object-fit:contain;background:#eaf5fa;border-radius:16px}
+  .card-groups .service-photo{object-fit:cover;padding:0}
+  .card-groups .card .lead{min-height:3em;margin:0 0 10px}
+  .card-groups .card .price{font-size:clamp(2.1rem,2.8vw,2.65rem);line-height:1.15;margin:7px 0}
+  .card-groups .card .list{margin:18px 0;gap:12px}
+  .card-groups .card .btn{width:100%;margin-top:17px}
+  .tools-showcase,.guide-section,.equipment-only,.comparison,.faq,.final-cta{max-width:100%}
+}
+@media(min-width:901px) and (max-width:1150px){
+  .card-groups>.card{padding:22px 19px}
+  .card-groups .product-img{height:265px}
+}
+@media(min-width:561px) and (max-width:900px){
+  .wrap{width:min(100% - 32px,850px)}
+  .card-groups .product-img{height:265px}
+}
+@media(max-width:560px){
+  .wrap{width:calc(100% - 24px)}
+  .card-groups .product-img{height:255px}
+  .card-groups .service-photo{object-fit:cover}
+}
 </style></head><body>
 <header><div class="wrap"><nav><img class="logo" src="assets/logo-aquaelite.png" alt="Aquaelite Soluciones Integrales en Agua"><a class="nav-cta" href="https://wa.me/51970683322?text=Hola%20Aquaelite%2C%20deseo%20informaci%C3%B3n%20sobre%20sus%20soluciones%20para%20detecci%C3%B3n%20de%20fugas.">Consultar por WhatsApp</a></nav><section class="hero"><div class="hero-copy"><div class="eyebrow">DETECCIÓN DE FUGAS · SOLUCIONES PROFESIONALES</div><h1>Empieza con herramientas gratuitas, equipos o diagnóstico especializado.</h1><p>Para profesionales, empresas y hogares. Elige la solución adecuada para tus instalaciones de agua.</p><div class="hero-points"><span class="pill">Diagnóstico ordenado</span><span class="pill">Protocolos de campo</span><span class="pill">Informes profesionales</span></div></div><div class="hero-media"><img class="hero-img" src="assets/portada-bosch-aquaelite.png" alt="Técnico latino Aquaelite con casco blanco usando scanner Bosch Professional D-tect 200 C para revisar tuberías ocultas"></div></section></div></header>
 <main class="wrap"><section class="intro"><h2>Elige cómo quieres empezar</h2><p>Equipos y acompañamiento para empresas; diagnóstico técnico para hogares y oficinas.</p></section>
